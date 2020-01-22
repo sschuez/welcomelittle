@@ -1,62 +1,59 @@
 <% name_pic = "flowers1.jpg" %>
+<% name_pic_1 = "flowers2.jpg" %>
 
 <!-- banner -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path(name_pic) %>');">
   <div class="container">
-    <h1><strong>Traueranzeigen</strong> einfach gemacht</h1>
-    <p>Kümmern Sie sich auf den Inhalt Ihres Nachrufs. Wir kümmern uns um die Veröffentlichung in ihrer Zeitung. Zum günstigsten Preis.</p>
-    <%= link_to "Anzeige schalten", "#", class: "btn btn-outline-light" %>
+		<h1><strong>Traueranzeigen</strong> einfach gemacht</h1>
+		<p>Kümmern Sie sich auf den Inhalt Ihres Nachrufs. Wir kümmern uns um die Veröffentlichung in ihrer Zeitung. Zum günstigsten Preis.</p>
+		<%= link_to "Anzeige schalten", "#", class: "btn btn-outline-light" %>
   </div>
 </div>
 <!-- /banner -->
 
+<!-- cards -->
+<div class="container my-5">
+	<h2 class="text-center mb-5">Willkommen!</h2>
+	
+	<div class="card-deck text-center">
+	  <div class="card bg-transparent border-0 align-items-center">
+			<%= image_tag "exchange_none.png", class: "card-img-top", style: "height: 100px; width: 100px;" %>
+			<div class="card-body">
+			  <h5 class="card-title">Abklärung</h5>
+			  <p class="card-text">Im ersten Schritt brauchen wir ein paar wenige Information: Welche Zeitung? Das gewünschte Datum sowie ihre Emailadresse. Sie erhalten unmittelbar Bescheid, ob die gwünschte Anzeige verfügbar ist.</p>
+			</div>
+	  </div>
 
-<div class="container">
-	<div class="row align-items-center">
-	  <div class="col">
-	    One of three columns
+	  <div class="card bg-transparent border-0 align-items-center">
+			<%= image_tag "layout_none.png", class: "card-img-top", style: "height: 100px; width: 100px;" %>
+			<div class="card-body">
+			  <h5 class="card-title">Gestaltung</h5>
+			  <p class="card-text">Wir zeigen Ihnen stilvolle Vorlagen, die Sie zur Verfassung Ihrer Traueranzeige nutzen können. Nach Vorgabe der Zeitung wird das Format automatisch passend gemacht.</p>
+			</div>
 	  </div>
-	  <div class="col">
-	    One of three columns
-	  </div>
-	  <div class="col">
-	    One of three columns
+
+	  <div class="card bg-transparent border-0 align-items-center">
+			<%= image_tag "newspaper_none.png", class: "card-img-top", style: "height: 100px; width: 100px;" %>
+			<div class="card-body">
+			  <h5 class="card-title">Publizierung</h5>
+			  <p class="card-text">Wir arbeiten mit den meisten Zeitungen in der Schweiz zusammen und können dadurch günstigere Preise anbieten, als wenn Sie direkt eine Anzeige schalten. Wir kümmern uns um die Publizierung.</p>
+			</div>
 	  </div>
 	</div>
+
 </div>
+<!-- /cards -->
 
 
-<div class="container">
-<div class="card-deck">
-  <div class="card">
-	<%= image_tag "exchange_none.png", :class => "card-img-top" %>
-    <div class="card-body">
-      <h5 class="card-title">Information</h5>
-      <p class="card-text">Im ersten Schritt brauchen wir ein paar wenige Information: Welche Zeitung? Das gewünschte Datum sowie ihre Emailadresse.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-	<%= image_tag "layout_none.png", :class => "card-img-top" %>
-    <div class="card-body">
-      <h5 class="card-title">Gestaltung</h5>
-      <p class="card-text">Wir zeigen Ihnen stilvolle Vorlagen, die Sie zur Verfassung Ihrer Traueranzeige nutzen können. Nach Vorgabe der Zeitung wird das Format automatisch passend gemacht.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-	<%= image_tag "newspaper_none.png", :class => "card-img-top" %>
-    <div class="card-body">
-      <h5 class="card-title">Publizierung</h5>
-      <p class="card-text">Wir arbeiten mit den meisten Zeitungen in der Schweiz zusammen und können dadurch günstigere Preise anbieten, als wenn Sie direkt eine Anzeige schalten.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
+
+<!-- about -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path(name_pic_1) %>');">
+	<div class="container">
+		<h2>hello</h2>
+	</div>
+
 </div>
-</div>
+<!-- /about -->
+
+
+
