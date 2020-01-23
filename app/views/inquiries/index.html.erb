@@ -1,0 +1,20 @@
+<div class="container">
+		<% @inquiries.each do |inquiry| %>
+	<div class="d-flex flex-row bd-highlight mb-3">	
+		  
+			<div class="p-2 bd-highlight">
+		  	<p><%= inquiry.email %></p>
+		  </div>
+		  <div class="p-2 bd-highlight">
+		  	<p><%= inquiry.newspaper %></p>
+			</div>
+		  <div class="p-2 bd-highlight">
+		  	<p><%= inquiry.other_newspaper %></p>
+			</div>
+			<div class="p-2 bd-highlight">
+		  	<p><%= inquiry.desired_date %></p>
+			</div>
+	</div>
+		<% end %>
+</div>
+

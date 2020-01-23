@@ -1,0 +1,21 @@
+<div class="container">
+	<%= simple_form_for(@inquiry) do |f| %>
+		<div class="form-group">
+			<%= f.label :email %>
+			<%= f.email_field :email, class: 'form-control' %> 
+		</div>
+		<div class="form-group">
+			<%= f.label :zeitung %>
+			<%= f.select( :newspaper, Inquiry::NEWSPAPER_LIST, class: 'form-control', id: 'exampleFormControlSelect1') %> 
+		</div>
+		<div class="form-group">
+			<%= f.label :andere_zeitung %>
+			<%= f.text_field :other_newspaper, class: 'form-control' %> 
+		</div>
+		<div class="form-group">
+			<%= f.label :gewünschtes_publikationsdatum %>
+			<%= f.date_field :desired_date, class: 'form-control' %> 
+		</div>
+		<%= f.submit class: 'btn btn-outline-secondary' %>
+	<% end %>
+</div>
