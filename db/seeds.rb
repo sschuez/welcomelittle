@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Inquiries
+newspapers = ["Aargauer Zeitung", "Basellandschaftl. Zeitung", "Basler Zeitung", "Berner Zeitung", "Neue Luzerner Zeitung", "Neue Zürcher Zeitung", "St. Galler Tagblatt", "Südostschweiz", "Tages Anzeiger", "Zürichsee-Zeitung Gesamtausgabe: Bezirk Horgen"]
+
+newspapers_other = ["", "", "", "WOZ", "", "Limmat", "Herisau Blatt", "Bodensee Zirkel", "", "Sennezeitung Arburg"]
+
+puts 'Creating 15 inquiries...'
+
+15.times do
+inquiry = Inquiry.create!(
+	email: Faker::Internet.email,
+	newspaper: newspapers.sample,
+	other_newspaper: newspapers_other.sample,
+	desired_date: Date.today + rand(1..7)
+	)
+end
+
+puts "Created #{Inquiry.count} new inquiries."
