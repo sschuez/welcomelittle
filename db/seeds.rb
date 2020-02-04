@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#Reset
+puts 'Deleting existing entries'
+User.delete_all
+Inquiry.delete_all
+
+# Admin
+puts 'Creating Admin stephen.schuez@gmail.com'
+User.create(email: "stephen.schuez@gmail.com", admin: true, password: "777jjj")
+
 # Inquiries
 newspapers = ["Aargauer Zeitung", "Basellandschaftl. Zeitung", "Basler Zeitung", "Berner Zeitung", "Neue Luzerner Zeitung", "Neue Zürcher Zeitung", "St. Galler Tagblatt", "Südostschweiz", "Tages Anzeiger", "Zürichsee-Zeitung Gesamtausgabe: Bezirk Horgen"]
 

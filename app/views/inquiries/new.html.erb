@@ -1,30 +1,45 @@
 <div class="container">
-	<div class="input-group mb-3">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			
+			<h2>Anfrage erstellen</h2>
+			<br>
+
+			<div class="input-group mb-3">
+				
+				<%= simple_form_for(@inquiry) do |f| %>
+					
+					<div class="form-group">
+						<%= f.label :email, "Ihre Emailadresse" %>
+						<%= f.email_field :email, class: 'form-control' %> 
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :newspaper, "Gewünschte Zeitung" %>
+						<%= f.select(:newspaper, ["Aargauer Zeitung", "Basellandschaftl. Zeitung", "Basler Zeitung", "Berner Zeitung", "Neue Luzerner Zeitung", "Neue Zürcher Zeitung", "St. Galler Tagblatt", "Südostschweiz", "Tages Anzeiger", "Zürichsee-Zeitung Gesamtausgabe: Bezirk Horgen"], {}, { :class => 'custom-select' }) %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :other_newspaper, "Andere Zeitung" %>
+						<%= f.text_field :other_newspaper, class: 'form-control' %> 
+					</div>
+
+					<div class="form-group">
+						<%= f.label :desired_date, "Gewünschtes Publikationsdatum" %>
+						<%= f.date_field :desired_date, class: 'form-control' %> 
+					</div>
+					<br>
+					<%= f.button :submit, "Anfrage abschicken", class: 'btn btn-outline-secondary', id: 'sweet-alert-demo' %>
+
+				<% end %>
+
+				<%= link_to "", root_path, id: "delete-link", class: "hidden" %>
+
+				<br>
+
+			</div>
 		
-		<%= form_for(@inquiry) do |f| %>
-			
-			<div class="form-group">
-				<%= f.label :email, "Email" %>
-				<%= f.email_field :email, class: 'form-control' %> 
-			</div>
-			
-			<div class="form-group">
-				<%= f.label :newspaper, "Gewünschte Zeitung" %>
-				<%= f.select(:newspaper, ["Aargauer Zeitung", "Basellandschaftl. Zeitung", "Basler Zeitung", "Berner Zeitung", "Neue Luzerner Zeitung", "Neue Zürcher Zeitung", "St. Galler Tagblatt", "Südostschweiz", "Tages Anzeiger", "Zürichsee-Zeitung Gesamtausgabe: Bezirk Horgen"], {}, { :class => 'custom-select' }) %>
-			</div>
-
-			<div class="form-group">
-				<%= f.label :other_newspaper, "Andere Zeitung" %>
-				<%= f.text_field :other_newspaper, class: 'form-control' %> 
-			</div>
-
-			<div class="form-group">
-				<%= f.label :desired_date, "Gewünschtes Publikationsdatum" %>
-				<%= f.date_field :desired_date, class: 'form-control' %> 
-			</div>
-
-			<%= f.submit class: 'btn btn-outline-secondary' %>
-		<% end %>
-
-	</div>
+		</div>
+	</div>	
 </div>
+

@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "logo_transparent_small.png", style: "height: 50px; width: auto;" %>
       <% end %>
 
@@ -13,11 +13,11 @@
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
+          <!-- <li class="nav-item">
+            <%#= link_to "Contact", contact_path, class: "nav-link" %>
+          </li> -->
           <li class="nav-item">
-            <%= link_to "Contact", contact_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Anzeige schalten", new_inquiry_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "Anzeige schalten", new_inquiry_path, class: "btn btn-outline-secondary mr-3" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://avatars.githubusercontent.com/sschuez", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -30,9 +30,9 @@
             <li class="nav-item active">
               <%= link_to "Home", root_path, class: "nav-link" %>
             </li>
-            <li class="nav-item">
-              <%= link_to "Contact", contact_path, class: "nav-link" %>
-            </li>
+            <!-- <li class="nav-item">
+              <%#= link_to "Contact", contact_path, class: "nav-link" %>
+            </li> -->
             <li class="nav-item">
               <%= link_to "Anzeige schalten", new_inquiry_path, class: "btn btn-outline-secondary" %>
             </li>

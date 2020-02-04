@@ -1,4 +1,5 @@
 class InquiriesController < ApplicationController
+	skip_before_action :authenticate_user!, only: [:new, :create]
 	def index
 		@inquiries = Inquiry.all
 	end
@@ -15,7 +16,9 @@ class InquiriesController < ApplicationController
 		@inquiry = Inquiry.new(inquiry_params)
 		@inquiry.save
 
-		redirect_to inquiry_path(@inquiry)
+		# redirect_to submitted_path
+		#redirect_to root_path, :flash => { :success => "Message" }
+		# redirect_to inquiry_path(@inquiry)
 	end
 
 	def edit

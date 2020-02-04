@@ -4,9 +4,17 @@
 <!-- banner -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path(name_pic) %>');">
   <div class="container">
-		<h1><strong>Traueranzeigen</strong></h1>
-		<p>Wir helfen Ihnen bei der Veröffentlichung ihres Nachrufs in ihrer Zeitung. Wir nehmen ihnen einen Prozess ab, bei...</p>
-		<%= link_to "Anzeige schalten", new_inquiry_path, class: "btn btn-outline-light" %>
+  	<div class="row ">
+  		<div class="col">
+  		
+		<h1><strong>Traueranzeigen erleichtert</strong></h1>
+		<br>
+		<p>Wir helfen Ihnen bei der Veröffentlichung ihres Nachrufs in ihrer Zeitung. Dabei nehmen wir ihnen diesen Prozess fast komplett ab, um sie in dieser schwierigen Situation bestmöglich zu unterstützen</p>
+		<br>
+		<%= link_to "Anzeige schalten", new_inquiry_path, class: "btn btn-outline-light btn-lg px-5" %>
+
+		</div>
+  	</div>
   </div>
 </div>
 <!-- /banner -->
@@ -48,8 +56,9 @@
 <!-- about -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path(name_pic_1) %>');">
 	<div class="container">
-		<h2 class="text-white">Schicken sie uns hier unverbindlich eine Anfrage zur Schaltung ihrer Traueranzeige</h2>
-		<%= link_to "Anzeige schalten", new_inquiry_path, class: "btn btn-outline-light" %>
+		<h2 class="text-white"><strong>Schicken sie uns hier unverbindlich eine Anfrage zur Schaltung ihrer Traueranzeige</strong></h2>
+		<br>
+		<%= link_to "Anzeige schalten", new_inquiry_path, class: "btn btn-outline-light btn-lg px-5" %>
 	</div>
 
 </div>
