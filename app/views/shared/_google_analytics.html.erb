@@ -1,10 +1,20 @@
-<% if Rails.env.production? %>
-<script async src="https://www.googletagmanager.com/gtag/js?id=<%= Rails.application.credentials.dig(:google_analytics) %>"></script>
+<!-- <%# if Rails.env.production? %>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%#= Rails.application.credentials.dig(:google_analytics) %>"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', '<%= Rails.application.credentials.dig(:google_analytics) %>');
+    gtag('config', '<%#= Rails.application.credentials.dig(:google_analytics) %>');
   </script>
-<% end %>
+<%# end %> -->
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= Rails.application.credentials.dig(:google_analytics, :tracking_id) %>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-156462604-2');
+    </script>
