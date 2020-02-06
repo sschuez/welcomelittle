@@ -2,6 +2,8 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
+require("plugins/google_analytics")
+
 import "bootstrap";
 // import flatpickr from 'flatpickr';
 // import flatpickr 'flatpickr/dist/flatpickr.min.css';
