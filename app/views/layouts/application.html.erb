@@ -3,6 +3,7 @@
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <%= render 'shared/google_analytics' %>
+    <%= render 'shared/google_tagmanager' %>
     <%#= javascript_pack_tag 'google_analytics' %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,6 +19,7 @@
     <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body class="bg-white">
+    <%= render 'shared/google_tagmanager_noscript' %>
 
     <%= render 'shared/navbar' %>
 
