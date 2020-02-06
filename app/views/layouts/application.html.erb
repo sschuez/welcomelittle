@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render 'shared/google_analytics' %>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156462604-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-156462604-2');
+    </script>
+
+    <%#= render 'shared/google_analytics' %>
+    <%#= javascript_pack_tag 'google_analytics' %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= meta_title %></title>    
@@ -12,7 +22,6 @@
     <title>in-frieden.ch</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%#= javascript_pack_tag 'google_analytics' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> 
     <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
