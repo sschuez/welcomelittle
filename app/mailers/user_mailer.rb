@@ -11,6 +11,11 @@ class UserMailer < ApplicationMailer
     # This will render a view in `app/views/user_mailer`!
   end
 
+  def test
+    @user = params[:user]
+    mail(to @user.email, subject: 'Dies ist ein Testmail')
+  end
+
   def hello
     mail(
       :subject => 'Hello from Postmark',
