@@ -13,7 +13,7 @@ class InquiriesController < ApplicationController
 	end
 
 	def create
-		@inquiry = Inquiry.build(inquiry_params)
+		@inquiry = Inquiry.new(inquiry_params)
 		
 		if @inquiry.save
 			mail = InquiryMailer.with(inquiry: @inquiry).inquiry_confirmation
