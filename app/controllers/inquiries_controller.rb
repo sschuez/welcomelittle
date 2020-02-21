@@ -13,12 +13,12 @@ class InquiriesController < ApplicationController
 	end
 
 	def create
-		@inquiry = Inquiry.new(inquiry_params)
+		@inquiry = Inquiry.build(inquiry_params)
 		
 		if @inquiry.save
 			mail = InquiryMailer.with(inquiry: @inquiry).inquiry_confirmation
 			mail.deliver_now
-			redirect_to root_path
+			# redirect_to root_path
 		else
 			render :new
 		end	
