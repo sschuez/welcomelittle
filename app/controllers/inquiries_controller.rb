@@ -18,6 +18,9 @@ class InquiriesController < ApplicationController
 		if @inquiry.save
 			mail = InquiryMailer.with(inquiry: @inquiry).inquiry_confirmation
 			mail.deliver_now
+
+			mail_2 = InquiryMailer.with(inquiry: @inquiry).admin_notification
+			mail_2.deliver_now
 			# redirect_to root_path
 		else
 			render :new

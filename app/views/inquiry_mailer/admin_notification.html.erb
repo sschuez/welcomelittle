@@ -1,0 +1,19 @@
+<style>
+	html {
+		font-family: sans-serif;
+	}
+</style>
+
+<p>Hallo <strong>Chef</strong>,</p>
+
+<p>Jemand hat eine neue Anfrage gestellt. Hier die Details:</p>
+
+<p><strong>Email: </strong><%= @inquiry.email %></p>  
+
+<p><strong>Zeitung: </strong><%= @inquiry.newspaper %></p>
+
+<p><strong>Weitere Zeitung: </strong><%= @inquiry.other_newspaper %></p>
+
+<p><strong>Gewünschtes Datum: </strong><%= @inquiry.desired_date %></p>
+
+<%= link_to "Hier geht's zur zur Homepage", root_url %>

@@ -4,9 +4,16 @@ class InquiryMailer < ApplicationMailer
     @inquiry = params[:inquiry]
     mail(
     	to: @inquiry.email, 
-    	subject: 'Ihre Anfrage bei in-frieden.ch',
-    	bcc: 'stephen.schuez@gmail.com'
+    	subject: 'Ihre Anfrage bei in-frieden.ch'
     	)
+  end
+	
+  def admin_notification
+  	@inquiry = params[:inquiry]
+  	mail(
+  		to: 'stephen.schuez@gmail.com',
+  		subject: 'Neue Anfrage auf in-frieden.ch'
+  		)
   end
 
 end
