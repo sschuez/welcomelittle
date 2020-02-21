@@ -14,11 +14,14 @@ class InquiriesController < ApplicationController
 
 	def create
 		@inquiry = Inquiry.new(inquiry_params)
-		@inquiry.save
-
-		# redirect_to submitted_path
-		#redirect_to root_path, :flash => { :success => "Message" }
-		# redirect_to inquiry_path(@inquiry)
+		
+		if @inquiry.save
+			mail = InquiryMailer.with(inquiry: @inquiry).inquiry_confirmation
+			mail.deliver_now
+			redirect_to root_path
+		else
+			render :new
+		end	
 	end
 
 	def edit
