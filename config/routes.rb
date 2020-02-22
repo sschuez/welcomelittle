@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
+  devise_for :users
   get 'contact', to: 'pages#contact', as: :contact
   
   # MAUAL ROUTES NOT REQUIRED
