@@ -39,3 +39,27 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-to-top{
+  border: 1px solid #7B5C59;
+  border-radius: 5px;
+  color: #7B5C59;
+  padding: 3px; 
+  padding-right: 12px; 
+  padding-left: 12px;
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.btn-to-top:hover{
+  color: #7B5C59;
+  background-color: #F1D9D4;
+}
+
+.btns-bottom{
+  display: flex;
+  margin-bottom: 18px;
+  border-bottom: solid 0.7px #7B5C59;
+  padding-bottom: 40px;
+
+}

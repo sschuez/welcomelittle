@@ -1,110 +1,45 @@
 <div class="container">
 	<div class="row">
-		<div class="col">
+		<div class="col text">
 			<br>
-			<h2 id="inhalte">Was beinhaltet eine Todesanzeige?</h2>
-			<p>
-				Nach einem Todesfall kann es für Hinterbliebene sehr schwierig sein, sich auf all die vielen Dinge zu konzentrieren, die anfallen. Eine der Herausforderungen ist die <strong>Todesanzeige</strong>. Aus Respekt zur verstorbenen Person, möchte man einen möglichst würdigen Nachruf erstellen. Doch wo anfangen? Im <a href="#vorlagen">folgenden Artikel</a>, haben wir ein paar Ideen und Vorlagen zusammengestellt, die ihnen bei der Formulierung einer Traueranzeige behilflich sein können. Alle <strong>Vorlagen</strong> sind einfach nachzuverfolgen und den eigenen Bedürfnissen anpassbar.
-				<br>
-				<br>
-				Bei einer Traueranzeige möchte man prinzipiell drei Dinge ausdrücken: 
-				<ul>
-					<li>den <strong>Verlust</strong> einer Person</li>
-					<li>die damit einhergehende <strong>Trauer</strong></li>
-					<li>die <strong>Freude</strong> über das gelebte Leben</li>
-				</ul>    
-				Eine Traueranzeige ehrt das Leben einer geliebten Person auf eine Art und Weise, wie es kaum anderweitig möglich ist. Daher sollten sie nicht zögern, über diese Vorlagen hinauszugehen und eigene Anekdoten, Erinnerungen oder sogar Insiderwitze, die von den Hinterbliebenen geschätzt wären, anzufügen. Denke Sie daran, <strong>dies ist ihre Möglichkeit, einer geliebten Person gebührend zu gedenken:</strong> Warum also nicht z.B. ein Lied zitieren, das die Person sehr mochte?
-				<br>
-				<br>
-				Normalerweise werden Todesanzeigen in der Zeitung geschaltet. Bis es jedoch soweit ist, haben wir für Sie ein paar <strong>Vorlagen</strong> zusammengestellt, die Ihnen bei der Wortfindung helfen werden. Wenn Ihnen eines der Vorlagen zusagt, können Sie diese einfach verwenden für Ihren eigenen Nachruf. Wir hoffen, dass diese Vorlagen eine Hilfe sind bei der Ehrung einer geliebten Person sowie der Aufrechterhaltung einer wichtigen Tradition.
-				<br>
-				<br>
-				Wenn Sie mehr im Detail darüber erfahren möchten, wie man eine Todesanzeigen schreibt, klicken Sie <a href="#traueranzeigen-im-detail">hier</a>, wo wir das Thema etwas ausführlicher beschreiben.
-			</p>
-			<br>
-
-			<!-- Next Article -->
-			<h2 id="vorlagen">Traueranzeigen, Vorlagen</h2>
-			<br>
-			<h5>Kurze Todesanzeige</h5>
-			<p>
-				Kurze Todesanzeigen sollten die wichtigsten Meilensteine und grundlegende Informationen über die verstorbene Person enthalten sowie allfällig bereits verstorbene Partner und Familienangehörige erwähnen. Kurzanzeigen werden im Normalfall dann publiziert, wenn die Privatsphäre der Person geschützt werden und/oder wenn lediglich eine kurze öffentliche Kundtuung gemacht werden will.
-				<br>			
-			<div class="box-todesanzeige template">
-				<h5>Beispiel einer kurzen Todesanzeige</h5>
-					<br>
-					<span class="placeholder">[Name]</span>, <span class="placeholder">[Alter]</span>, aus <span class="placeholder">[Ort]</span>, ist am <span class="placeholder">[Datum des Todes]</span> an <span class="placeholder">[Todesursache]</span> verstorben.
-					<br>
-					<br>
-					<span class="placeholder">[Liste der Familienangehörigen, die bereits verstorben sind]</span> sind bereits aus dem Leben geschieden. <span class="placeholder">[Name]</span> hinterlässt <span class="placeholder">[Liste hinterbliebener Familienangehörige]</span>.
-					<br>
-					<br>
-			</div>
+			<h2 id="inhaltsverzeichnis">Inhalte</h2>
+			<ul class="liste-inhalte">
+				<li><a href="#inhalte">Was beinhaltet eine Todesanzeige?</a></li>
+				<li><a href="#vorlagen">Traueranzeigen, Vorlagen</a></li>
+				<li><a href="#traueranzeigen-im-detail">Wie schreibt man eine Traueranzeige?</a></li>
+			</ul>
 			<br>
 			
-			<div class="box-todesanzeige beispiel">
-				<br>
-				Franziska Maurer, 84, aus Adliswil ist am 14.3.2020 an Altersschwäche verstorben.
-				<br>
-				<br>		
-				Ihr Mann Heinz Maurer ist bereits aus dem Leben geschieden. Franziska hinterlässt zwei Töchter - Tanja Mauerer-risi und Isabelle Maurer sowie drei Enkelkinder.
-				<br>
-				<br>
+			<!-- Next Article -->			
+			<%= render 'pages/shared/inhalte' %>
+			<!-- Buttons -->
+			<div class="btns-bottom">
+				<%= render 'pages/shared/button_to_top' %>
+				<a class="btn btn-to-top" href="#inhalte">
+					<i class="fas fa-arrow-up"></i>Beginn Artikel
+				</a>
 			</div>
-			</p>
-			<br>
-
-			<h5>Standard Todesanzeige</h5>
-			<p>
-				Eine standard Todesanzeige gibt eine Übersicht über das Leben einer Person, nachdem sie verstorben ist. Eine solche Todesanzeige beinhaltet normalerweise alle Grundangaben (Geburtsdatum, Todesdatum, Hinterbliebene, bereits Verstorbene, etc.). Sie geht aber auch über diese hinaus indem sie über die Errungenschaften und Leidenschaften der Person erzählt. Dabei wird oftmals darüber berichtet, wie die Person ihr weiteres Umfeld oder nahestehende Personen beeinflusst und geprägt hat, wie die Familie entstanden ist, oder was für sie / ihn wichtig in der Freizeit war. 
-				<br>
-				<div class="box-todesanzeige template">
-					<h5>Beispiel einer standard Todesanzeige</h5>
-					<br>
-					<span class="placeholder">[Name]</span>, <span class="placeholder">[Alter]</span>, aus <span class="placeholder">[Ort]</span>, ist am <span class="placeholder">[Datum des Todes]</span> nach <span class="placeholder">[Beschreibung]</span> Kampf gegen <span class="placeholder">[Todesursache]</span> verstorben.
-					<br>
-					<br>
-					<span class="placeholder">[Name]</span> ist am [<span class="placeholder">Geburtsdatum]</span> in <span class="placeholder">[Geburtsort]</span> geboren. Nach Abschluss <span class="placeholder">[Ausbildung]</span> in <span class="placeholder">[Ort der Schule]</span> im Jahr <span class="placeholder">[Abschlussjahr]</span>, studierte sie/er <span class="placeholder">[Studium]</span> an der Universität <span class="placeholder">[Name der Universität]</span>.
-					<br>
-					<br>
-					Nach erfolgreichem Abschluss, begann sie/er ihre/seine Karriere in der <span class="placeholder">[Industrie]</span> industrie. Im Jahr <span class="placeholder">[Jahr in dem sie sich kennenlernten]</span> lernte sie / er <span class="placeholder">[Name des Partners]</span> kennen. Sie heirateten <span class="placeholder">[Heiratsjahr]</span> und bekamen <span class="placeholder">[Anzahl Kinder]</span> Kinder, <span class="placeholder">[Liste der Namen der Kinder]</span>.
-					<br>
-					<br>
-					Nach der Pensionierung in <span class="placeholder">[Jahr der Pensionierung]</span>, verbrachte <span class="placeholder">[Name]</span> die meiste Zeit mit <span class="placeholder">[Liste Lieblingsaktivitäten]</span>.
-					<br>
-					<br>
-					<span class="placeholder">[Liste der Familienangehörigen, die bereits verstorben sind]</span> sind bereits vor ihr/ihm aus dem Leben geschieden. <span class="placeholder">[Name]</span> hinterlässt <span class="placeholder">[Liste hinterbliebener Familienangehörige]</span>.
-					<br>
-					<br>
-				</div>
-			
-			<br>
-
-			<div class="box-todesanzeige beispiel">
-				<br>
-				Berchtold Peter, 75, aus Zürich, ist am 26.3.2020 nach kurzem Kampf gegen Darmkrebs verstorben.
-				<br>
-				<br>
-				Berchtold ist am 2.1.1945, in Dübendorf geboren. Nach Abschluss des Gymnasiums im Jahr 1965, studierte er Ingenieurwissenschaften an der ETH Zürich.
-				<br>
-				<br>
-				Nach erfolgreichem Abschluss, begann er seine Karriere in der Bauindustrie. Im Jahr 1972 lernte er Juliane Buchholz kennen. Sie heirateten 1975 und bekamen 2 Kinder, Fabian und Yvette Peter.
-				<br>
-				<br>
-				Nach der Pensionierung in 2010 verbrachte Berchtold viel Zeit die meiste Zeit mit seiner Leidenschaft des Wanderns in unterschiedlichen Ländern sowie mit seinen Enkelkindern.
-				<br>
-				<br>
-				Sein Bruder, Markus, ist bereits vor ihm aus dem Leben geschieden. Berchtold hinterlässt seine Frau Juliane, seine Kinder sowie deren Enkelkinder.
-				<br>
-				<br>
+	
+			<!-- Next Article -->
+			<%= render 'pages/shared/vorlagen' %>
+			<!-- Buttons -->
+			<div class="btns-bottom">
+				<%= render 'pages/shared/button_to_top' %>
+				<a class="btn btn-to-top" href="#vorlagen">
+					<i class="fas fa-arrow-up"></i>Beginn Artikel
+				</a>
 			</div>
-			</p>
-			<br>
 
 			<!-- Next Article -->
-			<h2 id="traueranzeigen-im-detail">Wie schreibt man eine Traueranzeige?</h2>
+			<%= render 'pages/shared/traueranzeigen_im_detail' %>
+			<!-- Buttons -->
+			<div class="btns-bottom">
+				<%= render 'pages/shared/button_to_top' %>
+				<a class="btn btn-to-top" href="#traueranzeigen-im-detail">
+					<i class="fas fa-arrow-up"></i>Beginn Artikel
+				</a>
+			</div>
 
-			<br>
 		</div>		
 	</div>
 </div>

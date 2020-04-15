@@ -1,7 +1,9 @@
 .box-todesanzeige {
-	margin: 6px;
+	// margin: 6px;
 	padding: 24px;
 	border-radius: 5px;
+	font-size: 14px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .template {
@@ -9,7 +11,7 @@
 }
 
 .beispiel {
-	background-color: #F1D9D4;
+	background-color: #FCF9F4;
 }
 
 
@@ -17,4 +19,52 @@
 	background-color: #FCF9F4;
 	border-radius: 3px;
 	padding: 3px;
+}
+
+.text{
+	margin: 6px;
+}
+
+.fa-arrow-up{
+	margin-right: 6px;
+}
+
+.break{
+	margin-top: 12px;
+}
+
+.text ul li a{
+	text-decoration: none;
+	color: black;
+}
+
+.text ul li a:hover{
+	color: #7B5C59;
+}
+
+.liste-inhalte{
+	list-style: none;
+	padding-left: 0;
+}
+
+h2{
+	color: #7B5C59;
+}
+
+h5{
+	color: #7B5C59;
+}
+
+.strong{
+	color: #7B5C59;
+}
+
+.artikel-link{
+	color: #C27D32;
+	font-weight: bold;
+}
+
+.artikel-link:hover{
+	color: #90323D;
+	text-decoration: none;
 }
