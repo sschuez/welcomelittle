@@ -20,6 +20,8 @@ gem 'webpacker'
 gem 'devise'
 gem 'faker'
 
+gem 'pundit'
+
 # Rails Admin
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '~> 2.0'

@@ -21,3 +21,6 @@ initSweetalert('#sweet-alert-demo', {
     link.click();
   }
 });
+
+require("trix")
+require("@rails/actiontext")
