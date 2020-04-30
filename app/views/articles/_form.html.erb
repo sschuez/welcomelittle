@@ -1,6 +1,34 @@
-<%= form_with model: article do |form| %>
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.rich_text_area :content %>
-  </div>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<%= form_with(model: article) do |form| %>
+			  <div class="field from-group">
+			    <%= form.label :title %>
+			    <%= form.text_field :title, class: "form-control" %>
+			  </div>
+				<div class="field form-group">
+			    <%= form.label :content %>
+			    <%= form.rich_text_area :content, class: "form-control" %>
+			  </div>
+
+			  <% if @article.errors.any? %>
+			  	<div class="errors-container">
+			  		<ul>
+			  		  <% @article.errors.full_messages.each do |message| %>
+			  		      <li><%= message %></li>
+			  		    <% end %>
+			  		  </ul>
+			  	</div>
+			  <% end %>
+
+				<%= form.submit "Save", class: "btn btn-primary" %>
+			 
+			  <!-- <div class="field form-group">
+			    <button type="submit" class="btn btn-primary">Save</button>
+			  </div> -->
+			
+			<% end %>
+			<br>
+		</div>
+	</div>
+</div>
