@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			
+			<% @articles.each do |article| %>
+				<h2><%= article.title %></h2>
+				<p><%= article.description %></p>
+				<p>Updated at: <%= article.updated_at.strftime("%d.%m.%Y") %></p>
+				<p>___________________________</p>
+			<% end %>
+			
+		</div>
+	</div>
+</div>

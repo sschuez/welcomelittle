@@ -15,7 +15,7 @@ class ApplicationPolicy
   end
 
   def create?
-    user.admin
+    false
   end
 
   def new?

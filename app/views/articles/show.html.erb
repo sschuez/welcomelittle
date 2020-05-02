@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			
+			<h2><%= @article.title %></h2>
+			<p><strong><%= @article.description %></strong></p>
+			<p><%= @article.content %></p>
+
+			<%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+			
+		</div>
+	</div>
+</div>
