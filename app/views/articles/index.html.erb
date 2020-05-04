@@ -1,14 +1,21 @@
 <div class="container">
-	<div class="row">
-		<div class="col">
-			
-			<% @articles.each do |article| %>
-				<h2><%= article.title %></h2>
-				<p><%= article.description %></p>
-				<p>Updated at: <%= article.updated_at.strftime("%d.%m.%Y") %></p>
-				<p>___________________________</p>
-			<% end %>
-			
-		</div>
-	</div>
+      
+  <div class="cards">
+    
+    <% @articles.each do |article| %>
+      <div class="card-category">
+        <div class="card-title">
+          <h5><%= article.title %></h5>
+        </div>
+        <div class="card-content">
+          <p><%= article.description %></p>
+        </div>
+        <div class="card-update">
+          <p>Updated: <%= article.updated_at.strftime("%d.%m.%Y") %></p>
+        </div>
+      </div>
+    <% end %>
+  
+  </div>
+
 </div>
