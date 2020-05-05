@@ -68,3 +68,23 @@ h5{
 	color: #90323D;
 	text-decoration: none;
 }
+
+.trix-content{
+	// position: relative;
+	padding-bottom: 24px;
+}
+
+.article-update{
+	text-align: right;
+	p{
+		font-size: 12px;
+	}
+}
+
+.errors-container{
+	color: red;
+	border: 2px solid;
+	border-radius: 3px;
+	padding: 6px;
+	margin-bottom: 12px;
+}

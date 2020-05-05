@@ -2,6 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  a{
+  	text-decoration: none;
+  }
+  p{
+  	color: black;
+  }
 }
 
 // Smallest device
@@ -41,27 +47,28 @@
 
 .card-category {
   background-size: cover;
-  // background-position: center;
-  height: 180px;
+  height: auto;
   // display: flex;
   // justify-content: center;
   align-items: center;
-  // color: white;
   font-size: 18px;
-  // font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 14px;
+  padding: 20px;
   position: relative; 
 }
 
 .card-title{
-	// background-color: blue;
+	margin-top: 6px;
 }
 
 .card-content{
-	// background-color: red;
+	margin-top: 6px;
+  font-size: 14px;
+  p{
+  margin-bottom: 22px;
+
+  }
 }
 
 .card-update{

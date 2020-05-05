@@ -7,9 +7,9 @@
 			    <%= form.text_field :title, class: "form-control" %>
 			  </div>
 			  <br>
-			  <div class="field form-group">
+			  <div class="field form-group description">
 			    <%= form.label :description %>
-			    <%= form.text_field :description, class: "form-control" %>
+			    <%= form.text_field :description, class: "form-control description" %>
 			  </div>
 				<div class="field form-group">
 			    <%= form.label :content %>
@@ -22,6 +22,7 @@
 			  		<ul>
 			  		  <% @article.errors.full_messages.each do |message| %>
 			  		      <li><%= message %></li>
+			  		      <li>Current length description: <%= @article.description.length %></li>
 			  		    <% end %>
 			  		  </ul>
 			  	</div>

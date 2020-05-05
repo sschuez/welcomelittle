@@ -1,9 +1,13 @@
 class ArticlesController < ApplicationController
-	before_action :set_article, only: [:edit, :update, :show]
+	before_action :set_article, only: [:edit, :update, :show, :destroy]
+	skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def index
 		@articles = policy_scope(Article).order(created_at: :desc)
 	end
+
+  def show
+  end
 
 	def new
     @article = Article.new
@@ -33,9 +37,12 @@ class ArticlesController < ApplicationController
   		render :edit
   	end
   end
-  
-  def show
-  end
+
+	def destroy
+		@article.destroy
+		redirect_to articles_path
+		flash[:notice] = "Article (#{@article.title}) deleted."
+	end  
   
   private
   

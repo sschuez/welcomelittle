@@ -1,21 +1,30 @@
 <div class="container">
-      
-  <div class="cards">
-    
-    <% @articles.each do |article| %>
-      <div class="card-category">
-        <div class="card-title">
-          <h5><%= article.title %></h5>
-        </div>
-        <div class="card-content">
-          <p><%= article.description %></p>
-        </div>
-        <div class="card-update">
-          <p>Updated: <%= article.updated_at.strftime("%d.%m.%Y") %></p>
-        </div>
-      </div>
-    <% end %>
+  <div class="title-container">
+    <h2>Artikel zum Thema Todesanzeigen</h2>
+    <div>
+      <% if policy(Article).new? %>
+        <%= link_to "New Article", new_article_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div> 
   
+  <div class="cards">
+    <% @articles.each do |article| %>
+      <%= link_to article_path(article) do %>
+        <div class="card-category">
+          <div class="card-title">
+            <h5><%= article.title %></h5>
+          </div>
+          <div class="card-content">
+            <p><%= article.description %></p>
+          </div>
+          <div class="card-update">
+            <p>Zuletzt geändert: <%= article.updated_at.strftime("%d.%m.%Y") %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-
+  <br>
+  <br>
 </div>

@@ -2,11 +2,31 @@
 	<div class="row">
 		<div class="col">
 			
-			<h2><%= @article.title %></h2>
-			<p><strong><%= @article.description %></strong></p>
-			<p><%= @article.content %></p>
+			<div class="title-container">
+				<h2><%= @article.title %></h2>
+				<div class="btns-edit">
+					<%= link_to articles_path do %>
+						<i class="fas fa-arrow-left"></i>
+					<% end %>
+					<% if policy(Article).update? %>
+						<%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+						<%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure you want to delete this article?" }, class: "btn btn-danger" %>
+					<% end %>
+				</div>
+			</div>
+			
+			<div class="description-container">
+				<p><strong><%= @article.description %></strong></p>
+			</div>
 
-			<%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+			<div class="content-container">
+				<p><%= @article.content %></p>
+			</div>
+			<div class="article-update">
+				<p>Zuletzt geändert am <%= @article.updated_at.strftime("%d.%m.%Y") %></p>
+			</div>
+			<br>
+
 			
 		</div>
 	</div>

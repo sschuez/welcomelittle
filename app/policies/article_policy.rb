@@ -6,7 +6,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-  	user.admin
+    user == nil ? false : user.admin
   end
 
   def show?
@@ -14,6 +14,10 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-  	user.admin
+  	user == nil ? false : user.admin
+  end
+
+  def destroy?
+    user == nil ? false : user.admin
   end
 end
