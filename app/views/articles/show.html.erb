@@ -25,6 +25,11 @@
 			<div class="article-update">
 				<p>Zuletzt geändert am <%= @article.updated_at.strftime("%d.%m.%Y") %></p>
 			</div>
+
+			<div class="contact-container">
+				<p>Haben sie Fragen oder Anregungen? Schicken sie uns eine Nachricht.</p>
+				<%= link_to "Feedback senden", new_contact_path, class: "btn btn-to-top" %>
+			</div>
 			<br>
 
 			

@@ -1,7 +1,8 @@
 class InquiriesController < ApplicationController
 	skip_before_action :authenticate_user!, only: [:new, :create]
+	
 	def index
-		@inquiries = Inquiry.all
+		@inquiries = policy_scope(Inquiry)
 	end
 
 	def show
@@ -10,10 +11,12 @@ class InquiriesController < ApplicationController
 
 	def new
 		@inquiry = Inquiry.new
+		authorize @inquiry
 	end
 
 	def create
 		@inquiry = Inquiry.new(inquiry_params)
+		authorize @inquiry
 		
 		if @inquiry.save
 			mail = InquiryMailer.with(inquiry: @inquiry).inquiry_confirmation
@@ -21,7 +24,9 @@ class InquiriesController < ApplicationController
 
 			mail_2 = InquiryMailer.with(inquiry: @inquiry).admin_notification
 			mail_2.deliver_now
-			# redirect_to root_path
+
+			flash[:notice] = "Ihre Anfrage wurde erfolgreich übermittelt."
+ 			redirect_to root_path
 		else
 			render :new
 		end	

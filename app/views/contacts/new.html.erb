@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			
+			<h2>Kontaktaufnahme</h2>
+			<br>
+
+				<%= simple_form_for(@contact) do |f| %>
+					
+					<div class="form-group">
+						<%= f.label :email, "Ihre Emailadresse" %>
+						<%= f.email_field :email, class: 'form-control' %> 
+					</div>
+					
+					<div class="form-group">
+						<%= f.label :name, "Name (optional)" %>
+						<%= f.text_field :name, class: 'form-control' %>
+					</div>
+
+					<div class="form-group">
+						<%= f.label :subject, "Betreff (optional)" %>
+						<%= f.text_field :subject, class: 'form-control' %> 
+					</div>
+
+					<div class="form-group trix">
+						<%= f.label :content, "Nachricht*" %>
+						<%= f.rich_text_area :content, class: 'form-control' %> 
+					</div>
+					
+					<!-- Error messages -->
+					<% if @contact.errors.any? %>
+						<div class="errors-container">
+							<ul>
+							  <% @contact.errors.full_messages.each do |message| %>
+							    <li><%= message %></li>
+							  <% end %>
+							</ul>
+						</div>
+					<% end %>
+
+					<br>
+					<%= f.button :submit, "Anfrage abschicken", class: 'btn btn-to-top' %>
+
+				<% end %>
+
+				<br>
+
+		</div>
+	</div>	
+</div>
+
