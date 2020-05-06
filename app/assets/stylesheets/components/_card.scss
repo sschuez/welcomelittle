@@ -5,9 +5,7 @@
   a{
   	text-decoration: none;
   }
-  p{
-  	color: black;
-  }
+
 }
 
 // Smallest device
@@ -47,16 +45,20 @@
 
 .card-category {
   background-size: cover;
+  background-color: white;
   height: auto;
   // display: flex;
   // justify-content: center;
   align-items: center;
   font-size: 18px;
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
   padding: 20px;
-  position: relative; 
+  position: relative;
 }
+  .home {
+    background-color: #fffefc;
+  }
 
 .card-title{
 	margin-top: 6px;

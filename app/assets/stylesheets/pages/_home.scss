@@ -1,1 +1,65 @@
 // Specific CSS for your home-page
+
+.card {
+	.fas {
+		font-size: 60px;
+		color: #7b5c59;
+	}
+}
+
+.container-fluid {
+	background-color: #fffefc;
+}
+
+.elevator-pitch {
+	background-color: #fcf9f4;
+}
+
+.resources {
+	background-color: #fcf9f4;
+}
+
+p {
+	color: #4b3b47;
+}
+
+h2 {
+	font-weight: bold;
+}
+
+@include media-breakpoint-up(sm) { 
+	.container-fluid {
+		padding-left: 24px;
+		padding-right: 24px;
+	}	
+ }
+
+@include media-breakpoint-up(md) { 
+	.container-fluid {
+		padding-left: 60px;
+		padding-right: 60px;
+		.cards {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}	
+ }
+
+@include media-breakpoint-up(lg) { 
+	.container-fluid {
+		padding-left: 100px;
+		padding-right: 100px;
+		.cards {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}	
+ }
+
+@include media-breakpoint-up(xl) { 
+	.container-fluid {
+		padding-left: 130px;
+		padding-right: 130px;
+		.cards {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}	
+ }

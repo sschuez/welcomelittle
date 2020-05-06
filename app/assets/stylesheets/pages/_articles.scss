@@ -72,6 +72,7 @@ h5{
 .trix-content{
 	// position: relative;
 	padding-bottom: 24px;
+	color: #4b3b47;
 }
 
 .article-update{
@@ -79,6 +80,22 @@ h5{
 	p{
 		font-size: 12px;
 	}
+}
+
+.container-light {
+	background-color: #fffefc;
+}
+
+.container-dark {
+	background-color: #fcf9f4;
+}
+
+.container-article {
+	border-radius: 5px;
+	background-color: #fcf9f4;
+	padding: 24px;
+	box-shadow: 0 0 6px rgba(0,0,0,0.2);
+
 }
 
 .errors-container{
