@@ -1,3 +1,15 @@
+<!-- SEO -->
+<% content_for :meta_title, "Alle Artikel zum Thema Todesanzeigen" %>
+
+<% titles = [] %>
+<% @articles.each do |article| %>
+  <% titles << article.title %>
+  <% titles %>
+<% end %>
+
+<% content_for :meta_description, "Artikel: #{titles}" %>
+<%# content_for :meta_image, cl_image_path(@offer.photo.path) %>
+
 <div class="container-fluid container-light">
   <div class="title-container pt-5 pb-3">
     <h2>Artikel zum Thema Todesanzeigen</h2>
