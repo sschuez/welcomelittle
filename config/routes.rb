@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   # get 'articles', to: 'pages#articles', as: :articles
   
   resources :inquiries
-  resources :articles
   resources :contacts, only: [:new, :create]
+  resources :articles
+
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

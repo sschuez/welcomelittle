@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :set_article, only: [:edit, :update, :show, :destroy]
+	before_action :set_article, only: [:edit, :show, :update, :destroy]
 	skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def index
@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
 	end
 
   def show
+    @article = Article.friendly.find(params[:id])
+    authorize @article 
   end
 
 	def new
@@ -42,7 +44,7 @@ class ArticlesController < ApplicationController
 		@article.destroy
 		redirect_to articles_path
 		flash[:notice] = "Article (#{@article.title}) deleted."
-	end  
+	end
   
   private
   
@@ -51,7 +53,7 @@ class ArticlesController < ApplicationController
   end
 
   def set_article
-  	@article = Article.find(params[:id])
+  	@article = Article.friendly.find(params[:id])
   	authorize @article
   end
 

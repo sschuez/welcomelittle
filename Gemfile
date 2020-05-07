@@ -21,6 +21,7 @@ gem 'devise'
 gem 'faker'
 
 gem 'pundit'
+gem 'friendly_id', '~> 5.2.4'
 
 # Rails Admin
 gem 'remotipart', github: 'mshibuya/remotipart'
