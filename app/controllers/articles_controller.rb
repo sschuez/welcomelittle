@@ -56,5 +56,4 @@ class ArticlesController < ApplicationController
   	@article = Article.friendly.find(params[:id])
   	authorize @article
   end
-
 end
