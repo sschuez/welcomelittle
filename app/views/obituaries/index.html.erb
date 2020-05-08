@@ -1,0 +1,12 @@
+<div class="conatiner-fluid">
+	<div class="row">
+		<div class="col">
+			
+			<% @obituaries.each do |o| %>
+				<%= link_to obituary_path(o) do %>
+					<p><%= o.full_name %></p>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

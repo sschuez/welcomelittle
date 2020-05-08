@@ -1,0 +1,15 @@
+.profile-details {
+	display: flex;
+	justify-content: space-around;
+}
+
+.flex-item {
+	// flex: 30% 70%;
+}
+
+.basic-info {
+	.title {
+		margin-bottom: 3px;
+		font-weight: bold;
+	}
+}

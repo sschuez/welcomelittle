@@ -1,0 +1,29 @@
+<br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col container-obituary">
+			
+			<div class="profile-details">
+				<div class="flex-item" >
+					Image
+				</div>
+				<div class="flex-item basic-info">
+					<p class="title">In Erinnerung an</p>
+					<h2 class="mb-5"><%= @obituary.full_name %></h2>
+					
+					<p class="title">Verstorben am</p>
+					<p><%= @obituary.death_date.strftime("%d.%m.%Y") %></p>
+
+					<p class="title">Geboren am</p>
+					<p><%= @obituary.birth_date.strftime("%d.%m.%Y") %></p>
+
+					<p class="title">Zuletzt wohnhaft in</p>
+					<p><%= @obituary.residence %></p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<br>
+
