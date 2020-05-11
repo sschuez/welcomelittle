@@ -6,7 +6,9 @@
 			<br>
 
 				<%= simple_form_for(@obituary) do |f| %>
-					
+
+					<%= f.input :photo, as: :file, :folder => "in-frieden.ch" %>
+							
 					<div class="form-group">
 						<%= f.label :first_name, "Name der Person" %>
 						<%= f.text_field :first_name, class: 'form-control' %> 

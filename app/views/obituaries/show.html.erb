@@ -5,20 +5,38 @@
 			
 			<div class="profile-details">
 				<div class="flex-item" >
-					Image
+					<% if @obituary.photo.attached? %>
+						<%= cl_image_tag @obituary.photo.key, height: 300, width: 400, crop: :fill %>
+					<% else %>
+						<%= image_tag "cover.png", height: 300, width: 300, crop: :fill, class: "cover-img-obituary", alt: "" %>
+		  		<% end %>
 				</div>
 				<div class="flex-item basic-info">
+					<br>
 					<p class="title">In Erinnerung an</p>
-					<h2 class="mb-5"><%= @obituary.full_name %></h2>
+					<h2 class="mb-3"><%= @obituary.full_name %></h2>
 					
 					<p class="title">Verstorben am</p>
-					<p><%= @obituary.death_date.strftime("%d.%m.%Y") %></p>
+					<% if @obituary.death_date.nil? %>
+						<p>Privat</p>
+					<% else %>
+						<p><%= @obituary.death_date.strftime("%d.%m.%Y") %></p>
+					<% end %>
 
 					<p class="title">Geboren am</p>
-					<p><%= @obituary.birth_date.strftime("%d.%m.%Y") %></p>
+					<% if @obituary.birth_date.nil? %>
+						<p>Privat</p>
+					<% else %>
+						<p><%= @obituary.birth_date.strftime("%d.%m.%Y") %></p>
+					<% end %>
 
 					<p class="title">Zuletzt wohnhaft in</p>
-					<p><%= @obituary.residence %></p>
+					<% if @obituary.residence.nil? %>
+						<p>Privat</p>
+					<% else %>
+						<p><%= @obituary.residence %></p>
+					<% end %>
+
 				</div>
 			</div>
 			
