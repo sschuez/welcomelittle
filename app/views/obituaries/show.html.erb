@@ -6,7 +6,7 @@
 			<div class="profile-details">
 				<div class="flex-item" >
 					<% if @obituary.photo.attached? %>
-						<%= cl_image_tag @obituary.photo.key, height: 300, width: 400, crop: :fill %>
+						<%= cl_image_tag @obituary.photo.key, width: 300, crop: :fill, gravity: :auto, :quality=>"auto:good", :alt => "Foto in Erinnerung an #{@obituary.full_name}", class: "custom-img-obituary" %>
 					<% else %>
 						<%= image_tag "cover.png", height: 300, width: 300, crop: :fill, class: "cover-img-obituary", alt: "" %>
 		  		<% end %>
@@ -42,19 +42,20 @@
 			<br>
 
 			<div class="tabs">
-				<div class="tab-header">
 					
-					<ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
+				<div class="tab-header">
+					<ul class="flex-column flex-sm-row nav nav-tabs justify-content-center nav-justified" id="myTab" role="tablist">
 					  <li class="nav-item">
-					    <a class="nav-link active" id="nachruf-tab" data-toggle="tab" href="#nachruf" role="tab" aria-controls="nachruf" aria-selected="true">Nachruf</a>
+					    <a class="flex-sm-fill text-sm-center nav-link active" id="nachruf-tab" data-toggle="tab" href="#nachruf" role="tab" aria-controls="nachruf" aria-selected="true">Nachruf</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" id="erinnerungen-tab" data-toggle="tab" href="#erinnerungen" role="tab" aria-controls="erinnerungen" aria-selected="false">Erinnerungen</a>
+					    <a class="flex-sm-fill text-sm-center nav-link" id="erinnerungen-tab" data-toggle="tab" href="#erinnerungen" role="tab" aria-controls="erinnerungen" aria-selected="false">Erinnerungen</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" id="veranstaltungen-tab" data-toggle="tab" href="#veranstaltungen" role="tab" aria-controls="veranstaltungen" aria-selected="false">Veranstaltungen</a>
+					    <a class="flex-sm-fill text-sm-center nav-link" id="veranstaltungen-tab" data-toggle="tab" href="#veranstaltungen" role="tab" aria-controls="veranstaltungen" aria-selected="false">Veranstaltungen</a>
 					  </li>
 					</ul>
+				</div>
 
 					<div class="tab-content" id="myTabContent">
 					  <div class="tab-pane fade show active" id="nachruf" role="tabpanel" aria-labelledby="nachruf-tab">
@@ -68,7 +69,6 @@
 					  </div>
 					</div>
 
-				</div>
 			</div>
 
 		</div>
