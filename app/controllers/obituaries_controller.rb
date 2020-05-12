@@ -66,6 +66,6 @@ class ObituariesController < ApplicationController
 	private
 
 	def obituary_params
-		params.require(:obituary).permit(:first_name, :last_name, :residence, :death_date, :birth_date, :cause_of_death, :final_resting_place, :photo, :relation)
+		params.require(:obituary).permit(:first_name, :last_name, :residence, :death_date, :birth_date, :cause_of_death, :final_resting_place, :photo, :relation, :content)
 	end
 end

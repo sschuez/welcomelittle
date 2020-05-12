@@ -56,20 +56,20 @@
 					  </li>
 					</ul>
 
-					
+					<div class="tab-content" id="myTabContent">
+					  <div class="tab-pane fade show active" id="nachruf" role="tabpanel" aria-labelledby="nachruf-tab">
+							<p><%= @obituary.content %></p>
+					  </div>
+					  <div class="tab-pane fade" id="erinnerungen" role="tabpanel" aria-labelledby="erinnerungen-tab">
+							<p>Work in Progress</p>
+					  </div>
+					  <div class="tab-pane fade" id="veranstaltungen" role="tabpanel" aria-labelledby="veranstaltungen-tab">
+							<p>Work in Progress</p>
+					  </div>
+					</div>
+
 				</div>
 			</div>
-
-			
-
-			<div class="tab-content" id="myTabContent">
-			  <div class="tab-pane fade show active" id="nachruf" role="tabpanel" aria-labelledby="nachruf-tab">
-					<%= @obituary.residence %>
-			  </div>
-			  <div class="tab-pane fade" id="erinnerungen" role="tabpanel" aria-labelledby="erinnerungen-tab">...</div>
-			  <div class="tab-pane fade" id="veranstaltungen" role="tabpanel" aria-labelledby="veranstaltungen-tab">...</div>
-			</div>
-
 
 		</div>
 	</div>
