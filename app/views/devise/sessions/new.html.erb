@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       
-      <h2>Admin Login</h2>
+      <h2>Anmelden</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
@@ -17,12 +17,12 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in", class: "btn btn-flat" %>
+          <%= f.button :submit, "Einloggen", class: "btn btn-flat" %>
         </div>
       <% end %>  
       <br>
 
-      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+      <%= link_to "Passwort vergessen?", new_password_path(resource_name) %><br />
       <br>
 
     </div>

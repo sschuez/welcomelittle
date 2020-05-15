@@ -2,6 +2,15 @@ class UsersController < ApplicationController
 
 	# before_action :set_user, only: [:show, :edit, :update] # probably want to keep using this
 
+	def index
+		
+	end
+
+	def show
+		@user = User.friendly.find(params[:id])
+  	authorize @user
+	end
+
  #  # GET /users
  #  # GET /users.json
  #  def index
