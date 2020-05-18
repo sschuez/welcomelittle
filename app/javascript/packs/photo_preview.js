@@ -3,6 +3,7 @@ console.log("Hello from photo_preview");
 const previewImageOnFileSelect = () => {
   // we select the photo input
   const input = document.getElementById('photo-input');
+  console.log("Hello from within previewImageOnFileSelect");
   if (input) {
     // we add a listener to know when a new picture is uploaded
     input.addEventListener('change', () => {

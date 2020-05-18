@@ -4,9 +4,22 @@
 
 .upload-photo {
   border: 1px solid #d3d3d3;
-  padding: 16px 24px;
+  padding: 6px 12px;
   cursor: pointer;
   font-weight: 500;
   background: white;
-  border-radius: 2px;
+  border-radius: 4px;
+  color: #4b3b47;
+}
+
+.upload-photo:hover {
+		text-decoration: none;
+		color: #7B5C59;
+	}
+
+.password-requirement {
+  border: 1.3px solid red;
+  border-radius: 4px;
+  padding: 6px 18px;
+  margin-bottom: 12px;
 }

@@ -3,7 +3,7 @@
   border-radius: 50%;
 }
 .avatar-large {
-  width: 56px;
+  width: 140px;
   border-radius: 50%;
 }
 .avatar-bordered {
@@ -20,8 +20,13 @@
 }
 
 .fa-user-circle {
-  font-size: 80px;
+  font-size: 120px;
   color: #7B5C59;
+}
+
+.photo-selection {
+  text-align: center;
+  // margin-bottom: -6px;
 }
 
 .default-avatar {

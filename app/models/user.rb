@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   has_many :obituaries
   has_one_attached :photo
+
+  # mount_uploader :photo, AvatarUploader
   
   def full_name
     "#{first_name} #{last_name}"

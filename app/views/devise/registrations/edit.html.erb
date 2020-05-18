@@ -7,23 +7,32 @@
   <%= f.error_notification %>
 
   <div class="photo-selection">
+    
     <% if @user.photo.attached? %>
       <%= cl_image_tag @user.photo.key, :transformation=>[
             {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"thumb"},
             {:width=>200, :crop=>"scale"}
             ], class: "avatar-large", alt: "avatar-large" %>
+
+      <div class="mx-auto mt-3">
+        <%#= f.input :photo, input_html: { class: 'hidden'} %>
+        <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Foto hochladen', hint: "Nach Hochladen, aktuelles Passwort eingeben und speichern" %>
+        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+      </div>
+
     <% else %>
-<!-- <div class="avatar-notice">
-      </div> -->
+
       <div class="default-avatar">
         <i class="far fa-user-circle"></i>
-        <div class="mx-auto">
+        
+        <div class="mx-auto mt-3">
           <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Foto hochladen' %>
-
           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
         </div>
+     
       </div>
     <% end %>
+  
   </div>
 
   <div class="row row-cols-1 row-cols-md-2">
@@ -38,12 +47,12 @@
         
         <%= f.input :first_name,
                     label: "Vorname",
-                    hint: "kann leer gelassen werden, wenn keine Änderungen gewünscht sind",
+                    hint: "kann leer bleiben, falls keine Änderungen gewünscht",
                     required: false,
                     input_html: { autocomplete: "new-first_name" } %>
         <%= f.input :last_name,
                     label: "Nachname",
-                    hint: "kann leer gelassen werden, wenn keine Änderungen gewünscht sind",
+                    hint: "kann leer bleiben, falls keine Änderungen gewünscht",
                     required: false,
                     input_html: { autocomplete: "new-last_name" } %>          
       </div>
@@ -53,27 +62,31 @@
       <div class="form-inputs">
         <%= f.input :password,
                     label: "Passwort",
-                    hint: "kann leer gelassen werden, wenn keine Änderungen gewünscht sind",
+                    hint: "kann leer bleiben, falls keine Änderungen gewünscht",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
                     label: "Passwort wiederholen",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    label: "Aktuelles Passwort",
-                    hint: "für die Änderungen müssen sie ihr aktuelles Passwort eingeben",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
       </div>
     </div>
   
   </div>  
-
+  
+  <div class="password-requirement">
+    <%= f.input :current_password,
+                label: "Aktuelles Passwort",
+                hint: "für Änderungen müssen sie ihr aktuelles Passwort eingeben",
+                required: true,
+                input_html: { autocomplete: "current-password" } %>
+  </div>
+  
   <div class="form-actions">
     <%= f.button :submit, "Speichern", class: "btn btn-flat" %>
   </div>
   <% end %>
+  <br>
   <br>
 
   <h3>Konto löschen</h3>
