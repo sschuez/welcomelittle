@@ -1,9 +1,32 @@
 <div class="container">
-	<div class="row">
+	
+	<div class="row row-cols-1 row-cols-md-2 my-5 py-5 container-article">
+		
+		<div class="col mb-5">
+	    <% if @user.photo.attached? %>
+	    	<%= cl_image_tag @user.photo.key, :transformation=>[
+	    	  	  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"thumb"},
+	    	  	  {:width=>200, :crop=>"scale"}
+	    	  	  ], class: "avatar-large", alt: "avatar-large" %>
+			<% else %>
+	<!-- <div class="avatar-notice">
+				</div> -->
+				<div class="default-avatar">
+					<i class="far fa-user-circle"></i>
+					<div class="mx-auto">
+						<%= link_to "Bild anpassen", edit_user_registration_path, class: "btn btn-flat btn-flat-sm" %>
+		   		</div>
+				</div>
+	    <% end %>
+		</div>
+
 		<div class="col">
-			
 			<h2><%= @user.full_name %></h2>
-			
+			<br>
+			<p class="title">Email: <%= @user.email %></p>
+
+			<%= link_to "Password ändern", edit_user_registration_path, class: "btn btn-flat btn-flat-sm" %>
 		</div>
 	</div>
+
 </div>

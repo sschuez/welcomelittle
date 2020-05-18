@@ -11,6 +11,7 @@ class User < ApplicationRecord
          # :confirmable
 
   has_many :obituaries
+  has_one_attached :photo
   
   def full_name
     "#{first_name} #{last_name}"

@@ -22,6 +22,7 @@ gem 'faker'
 
 gem 'pundit'
 gem 'friendly_id', '~> 5.2.4'
+gem 'carrierwave'
 gem 'cloudinary', '~> 1.12.0'
 
 # Rails Admin
