@@ -3,9 +3,7 @@ class ObituariesController < ApplicationController
 	def index
 		@obituaries = Obituary.all
 
-		# @active = params[:active_tab] ? params[:active_tab] : 'nachruf'
 		skip_policy_scope
-
 	end
 
 	def new
@@ -31,6 +29,7 @@ class ObituariesController < ApplicationController
 	def show
 		@obituary = Obituary.friendly.find(params[:friendly_id])
 		authorize @obituary
+		@user = @obituary.user
 	end
 
 	def edit

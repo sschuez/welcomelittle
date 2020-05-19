@@ -41,6 +41,14 @@ body {
 	background-color: #fffefc;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 
 
 @include media-breakpoint-up(sm) { 

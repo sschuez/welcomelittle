@@ -10,10 +10,12 @@
 
         <div class="form-inputs">
           <%= f.input :first_name,
+                      label: "Vorname",
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "first_name" }%>
           <%= f.input :last_name,
+                      label: "Nachname",
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "last_name" }%>
@@ -22,10 +24,12 @@
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
           <%= f.input :password,
+                      label: "Passwort",
                       required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      hint: ("mindestens #{@minimum_password_length} Zeichen" if @minimum_password_length),
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
+                      label: "Passwort wiederholen",
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>

@@ -21,11 +21,14 @@
 
 .cover-img-obituary {
 	width: 300px;
-  // max-width: 250px;
   height: 300px;
-  // max-height: 250px;
   object-fit: cover;
   border-radius: 7px;
+}
+
+.cover-img-obituary.user {
+	width: 150px;
+	height: 150px;
 }
 
 .custom-img-obituary {

@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :obituaries
   has_one_attached :photo
 
+  validates :first_name, :last_name, presence: true
+
   # mount_uploader :photo, AvatarUploader
   
   def full_name

@@ -29,14 +29,27 @@
   background-color: #fcf9f4;
   padding: 24px;
   box-shadow: 0 0 6px rgba(0,0,0,0.2);
-  // margin-right: 0px;
-  // margin-left: 0px;  
+}
+
+.user-obituaries {
+  display: grid;
+  // flex-direction: column;
+  grid-template-columns: 1fr;
+}
+
+.user-obituary-img {
+  text-align: center;
+}
+
+.user-obituary-details {
+  margin: 12px;
 }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .container-user {
-    margin: 0 12px;
+    margin: 40px 0;
+    padding: 30px 12px;
   }
   .container-title {
     margin: 24px 12px;
@@ -46,7 +59,7 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .container-user {
-    margin: 0 40px;
+    // margin: 0 40px;
   }
   .container-title {
     margin: 24px 40px;

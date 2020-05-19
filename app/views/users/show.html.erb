@@ -3,7 +3,7 @@
 <% content_for :meta_description, "#{@user.full_name} hat über sein Profil auf #{DEFAULT_META["meta_product_name"]} eine Todesanzeige online erstellt und mit Verwandten und Freunden geteilt. Publizieren auch sie ihre Traueranzeige online auf #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_image, cl_image_path(@user.photo.key) %>
 
-<div class="">
+<div class="container-fluid">
 	
 	<div class="row row-cols-1 row-cols-md-2 my-5 py-5 container-user">
 		
@@ -41,15 +41,49 @@
 
 			<%= link_to "Profil anpassen", edit_user_registration_path, class: "btn btn-flat" %>
 		</div>
+	
+
+	</div>
+	
+
+	
+	<h3 class="container-title">Traueranzeigen</h3>
+
+	<div class="container-user">
+		<div class="user-obituaries">
+
+			<% if @user.obituaries.empty? %>
+				<p>Sie haben noch keine Traueranzeige aufgeschaltet</p>
+			<% else %>
+				<% @user.obituaries.each do |o| %>
+					<%= link_to obituary_path(o) do %>
+					
+					<div class="card-user-obituary">
+						
+						<div class="user-obituary-img">
+							<% if o.photo.attached? %>
+								<%= cl_image_tag o.photo.key, width: 150, crop: :fill, gravity: :auto, :quality=>"auto:good", :alt => "Foto in Erinnerung an #{o.full_name}", class: "custom-img-obituary user" %>
+							<% else %>
+								<%= image_tag "cover.png", crop: :fill, class: "cover-img-obituary user", alt: "" %>
+				  		<% end %>
+						</div>
+						
+						<div class="user-obituary-details">
+							<p><%= o.full_name %></p>
+						</div>
+					
+					</div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
 	</div>
 
 	<div class="container-title">
-
 	  <div class="contact-container">
 	    <p>Haben sie Fragen oder Anregungen? Schicken sie uns eine Nachricht.</p>
 	    <%= link_to "Feedback senden", new_contact_path, class: "btn btn-flat" %>
 	  </div>
-	
 	</div>
 
 </div>
