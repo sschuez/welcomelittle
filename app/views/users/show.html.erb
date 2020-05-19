@@ -1,6 +1,6 @@
-<div class="container">
+<div class="">
 	
-	<div class="row row-cols-1 row-cols-md-2 my-5 py-5 container-article">
+	<div class="row row-cols-1 row-cols-md-2 my-5 py-5 container-user">
 		
 		<div class="col mb-3">
 
@@ -36,6 +36,15 @@
 
 			<%= link_to "Profil anpassen", edit_user_registration_path, class: "btn btn-flat" %>
 		</div>
+	</div>
+
+	<div class="container-title">
+
+	  <div class="contact-container">
+	    <p>Haben sie Fragen oder Anregungen? Schicken sie uns eine Nachricht.</p>
+	    <%= link_to "Feedback senden", new_contact_path, class: "btn btn-flat" %>
+	  </div>
+	
 	</div>
 
 </div>
