@@ -15,7 +15,11 @@
     <%= link_to "Feedback", new_contact_path, class: "text-muted small" %>
   </div>
   <div class="footer-info">
-    <%= link_to "Profil", user_path(current_user), class: "text-muted small" %>
+    <% if user_signed_in? %>
+      <%= link_to "Profil", user_path(current_user), class: "text-muted small" %>
+    <% else %>
+      <%= link_to "Profil", new_user_session_path, class: "text-muted small" %>
+    <% end %>
     <%= link_to "Traueranzeigen", obituaries_path, class: "text-muted small" %>
     <%= link_to "Traueranzeige erstellen", new_obituary_path, class: "text-muted small" %>
   </div>
