@@ -1,5 +1,6 @@
 class ObituariesController < ApplicationController
-	
+	skip_before_action :authenticate_user!, only: [:index, :show, :welcome]
+
 	def index
 		@obituaries = Obituary.all
 
@@ -61,6 +62,9 @@ class ObituariesController < ApplicationController
 		flash[:notice] = "Traueranzeige für #{@obituary.full_name} wurde gelöscht"
 	end
 
+	def welcome
+		skip_authorization
+	end
 
 	private
 

@@ -1,0 +1,25 @@
+<div class="container-fluid container-light">
+	<div class="row">
+		<div class="col py-5">
+
+			<h2>Willkommen</h2>
+			<br>
+			<p>
+				Als erstes möchte wir ihnen unser <strong class="strong">aufrichtiges Beileid und tiefes Mitgefühl</strong> für ihren Verlust wünschen. Wir wissen, dies ist eine schwierige Zeit: Aus diesem Grund haben wir <%= link_to "in-frieden.ch", root_path, class: "artikel-link" %> gegründet. Somit können wir ihnen wenigsten einen Teil - <strong class="strong">das Erstellen und Teilen einer Todesanzeige</strong> - erleichtern. 
+			</p>
+
+			<p>
+				Damit sie ihre persönliche Traueranzeige aufschalten und teilen können, müssen sie sich mit Namen und Emailadresse <strong class="strong">registrieren</strong>. Melden sie sich gleich hier an.
+			</p>
+			<%= link_to "Registrieren", new_user_registration_path, class: "btn btn-flat" %>
+			<br>
+			<br>
+			
+
+			<p>Wenn sie Fragen oder Anregungen haben, bitte zögern sie nicht, mit uns in Kontakt zu treten.</p>
+			<%= link_to "Nachricht senden", new_contact_path, class: "btn btn-flat" %>
+			<br>
+			<br>
+		</div>
+	</div>
+</div>
