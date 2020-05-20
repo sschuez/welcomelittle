@@ -1,0 +1,35 @@
+<!-- Icons edit & delete top -->
+<div class="icons-top container-title">
+	<% if current_user.admin? %>
+		<div class="icon-back">
+		<%= link_to users_path, class: "btn btn-back" do %>
+			<i class="fas fa-arrow-left"></i>
+		<% end %>
+		</div>
+	<% end %>
+
+	<% if current_user != @user %>
+		<div class="impersonate">
+			<%= link_to "Impersonate", impersonate_user_path(@user), method: :post %>
+		</div>
+	<% end %>
+
+	<% if policy(@user).update? %>
+		<div class="icon-edit">
+			<%= link_to edit_user_registration_path, class: "btn" do %>
+		  	<i class="fas fa-edit"></i>
+			<% end %>
+		</div>
+	<% end %>
+
+	<% if policy(@user).destroy? %>
+		<div class="icon-delete">
+			<%= link_to user_path(@user),
+			      method: :delete,
+			      data: { confirm: "Sind sie sicher? Mit dem Löschen des Kontos (von #{@user.full_name}) werden auch alle dazugehörigen Nachrufe entfernt." },
+			      class: "btn" do %>
+					<i class="fas fa-trash-alt"></i>
+			<% end %>
+		</div>
+	<% end %>
+</div>

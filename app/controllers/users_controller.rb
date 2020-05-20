@@ -1,55 +1,49 @@
 class UsersController < ApplicationController
-
-	# before_action :set_user, only: [:show, :edit, :update] # probably want to keep using this
+	before_action :set_user, only: [:show, :edit, :update, :destroy, :impersonate] 
 
 	def index
-		
+		@users = policy_scope(User).order(created_at: :desc)
 	end
 
 	def show
-		@user = User.friendly.find(params[:id])
-  	authorize @user
 	end
 
- #  # GET /users
- #  # GET /users.json
- #  def index
- #    @users = User.all
- #  end
+	# def edit
+	# end
 
- #  # # GET /users/1
- #  # # GET /users/1.json
- #  def show
+	# def update
+	# 	if @user.update(user_params)
+	# 		redirect_to user_path(@user),  notice: "Profil wurde angepasst"
+	# 	else
+	# 		render :edit
+	# 	end 
+	# end
 
- #  end
+	def destroy
+    @user.destroy
 
- #  # GET /users/1/edit
- #  def edit
+    redirect_to root_path, notice: "Profil von #{@user.full_name} wurde gelöscht"
+	end
 
- #  end
+	def impersonate
+    impersonate_user(@user)
+    redirect_to root_path
+  end
 
- #  # # PATCH/PUT /users/1
- #  # # PATCH/PUT /users/1.json
- #  def update
- #    respond_to do |format|
- #      if @user.update(user_params)
- #        format.html { redirect_to @user, notice: 'User was successfully updated.' }
- #        format.json { render :show, status: :ok, location: @user }
- #      else
- #        format.html { render :edit }
- #        format.json { render json: @user.errors, status: :unprocessable_entity }
- #      end
- #    end
- #  end
+  def stop_impersonating
+  	authorize current_user
+    stop_impersonating_user
+    redirect_to users_path, notice: "Stopped impersonating"
+  end
 
- #  private
- #  # Use callbacks to share common setup or constraints between actions.
- #  def set_user
- #    @user = User.find(params[:id])
- #  end
+	private
 
-  # def user_params
-  #   params.require(:user).permit(:photo)
-  # end
+  def user_params
+    params.require(:user).permit(:email, :first_name, :last_name, :photo)
+  end
 
+  def set_user
+  	@user = User.friendly.find(params[:id])
+  	authorize @user
+  end
 end

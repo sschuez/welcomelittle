@@ -19,6 +19,14 @@
   border: white 1px solid;
 }
 
+.user-avatar{
+  width: 70px;
+  border-radius: 50%;
+  img:hover{
+    color: $blue; 
+  }
+}
+
 .fa-user-circle {
   font-size: 120px;
   color: #7B5C59;

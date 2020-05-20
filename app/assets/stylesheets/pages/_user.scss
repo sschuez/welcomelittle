@@ -27,7 +27,8 @@
 .container-user {
   border-radius: 5px;
   background-color: #fcf9f4;
-  padding: 24px;
+  padding: 36px 12px;
+  // padding-bottom: 36px;
   box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
 
@@ -45,14 +46,22 @@
   margin: 12px;
 }
 
+.publ-date {
+  font-size: 14px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .container-user {
-    margin: 40px 0;
-    padding: 30px 12px;
+    margin: 0 0;
+    // padding: 30px 12px;
   }
   .container-title {
     margin: 24px 12px;
+  }
+
+  .user-obituary-details {
+    text-align: center;
   }
 }
 
@@ -64,6 +73,10 @@
   .container-title {
     margin: 24px 40px;
   }
+
+  .user-obituary-details {
+    text-align: center;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -73,6 +86,10 @@
   }
   .container-title {
     margin: 24px 80px;
+  }
+
+  .user-obituary-details {
+    text-align: left;
   }
 }
 
@@ -84,6 +101,10 @@
   .container-title {
     margin: 24px 150px;
   }
+
+  .user-obituary-details {
+    text-align: left;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
@@ -93,5 +114,9 @@
   }
   .container-title {
     margin: 24px 200px;
+  }
+
+  .user-obituary-details {
+    text-align: left;
   }
 }

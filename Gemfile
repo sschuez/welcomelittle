@@ -24,6 +24,7 @@ gem 'pundit'
 gem 'friendly_id', '~> 5.2.4'
 gem 'carrierwave'
 gem 'cloudinary', '~> 1.12.0'
+gem 'pretender'
 
 # Rails Admin
 gem 'remotipart', github: 'mshibuya/remotipart'

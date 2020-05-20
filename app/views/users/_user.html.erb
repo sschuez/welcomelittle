@@ -1,0 +1,54 @@
+<% @users.each do |user| %>
+		
+		<div class="index-card">
+
+				<div class="flex-grid">
+					
+					<!-- Avatar -->
+					<div class="flex-col item1">
+						<%= link_to user_path(user) do %>
+							<% if user.photo.attached? %>
+						         <%= cl_image_tag user.photo.key, :transformation=>[
+						            {:width=>200, :height=>200, :gravity=>"face", :radius=>"max", :crop=>"thumb"},
+						            {:width=>200, :crop=>"scale"}
+						            ], 
+						            class: "user-avatar", alt: "user-avatar" %>
+						  <% else %>
+								<div class="default-avatar">
+									<%= image_tag "default-avatar.png", class: "user-avatar", alt: "user-avatar" %>
+								</div>
+						  <% end %>
+						<% end %>
+					</div>
+				
+					<!-- Name -->
+					<div class="flex-col name-item">
+						<%= link_to user_path(user) do %>
+							<h5><%= user.full_name %></h5>
+						<% end %>
+					</div>
+
+					<!-- empty placeholder -->
+					<div class="flex-col">
+					</div>
+
+					<!-- Belt -->
+					<div class="flex-col belt-item">
+
+					</div>
+
+					<!-- Mail -->
+					<div class="flex-col mail">
+						<%= mail_to user.email, class: "btn" do %>
+							<i class="far fa-envelope"></i>
+						<% end %>						
+					</div>
+
+					<!-- Count of Obituaries -->
+					<div class="flex-col obs-count">
+						<p><strong>Obts:</strong> <%= user.obituaries.count %></p>
+					</div>
+				</div>
+
+		</div>
+	<% end %>

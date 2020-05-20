@@ -1,11 +1,13 @@
 <!-- SEO -->
-<% content_for :meta_title, "Profil von #{@user.full_name} auf #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, "#{@user.full_name} hat über sein Profil auf #{DEFAULT_META["meta_product_name"]} eine Todesanzeige online erstellt und mit Verwandten und Freunden geteilt. Publizieren auch sie ihre Traueranzeige online auf #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_image, cl_image_path(@user.photo.key) %>
+<% content_for :meta_title, "In Erinnerung an #{@user.full_name} - #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Wir nehmen Abschied von #{@user.full_name} und möchten gemeinsam ein wundervolles Leben zelebrieren und würdigen. Dafür haben wir einen Nachruf auf #{DEFAULT_META["meta_product_name"]} erstellt." %>
+<%# content_for :meta_image, cl_image_path(@user.photo.key) %>
 
 <div class="container-fluid">
-	
-	<div class="row row-cols-1 row-cols-md-2 my-5 py-5 container-user">
+
+	<%= render 'icons_top' %>
+
+	<div class="row row-cols-1 row-cols-md-2 container-user">
 		
 		<div class="col mb-3">
 
@@ -38,13 +40,13 @@
 			<h2><%= @user.full_name %></h2>
 			<br>
 			<p class="title"><strong>Email:</strong> <%= @user.email %></p>
-
-			<%= link_to "Profil anpassen", edit_user_registration_path, class: "btn btn-flat" %>
+			
+			<% if policy(@user).update? %>
+				<%= link_to "Profil anpassen", edit_user_registration_path, class: "btn btn-flat" %>
+			<% end %>
 		</div>
-	
 
 	</div>
-	
 
 	
 	<h3 class="container-title">Traueranzeigen</h3>
@@ -69,7 +71,8 @@
 						</div>
 						
 						<div class="user-obituary-details">
-							<p><%= o.full_name %></p>
+							<p><strong><%= o.full_name %></strong></p>
+							<p class="publ-date">Veröffentlicht am: <%= o.created_at.strftime("%d.%m.%Y") %></p>
 						</div>
 					
 					</div>

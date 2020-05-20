@@ -81,3 +81,41 @@
     text-decoration: none;
   }
 }
+
+.icons-top{
+  direction: ltr;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icons-top.container-title {
+  margin-bottom: 6px;
+}
+
+.icon-edit{
+  .btn{
+    color: $orange;
+  }
+  margin-left: 12px;
+}
+
+.fa-edit{
+  color: $orange;
+}
+
+.icon-delete{
+  .btn{
+    color: $red;
+  }
+  margin-right: 6px;
+}
+
+.fa-trash-alt{
+  color: $red;
+}
+
+.icon-back{
+  margin-right: auto;
+}
+

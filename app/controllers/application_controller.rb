@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  impersonates :user
+
 	# Meta Tag helper, image loader for external world
   def default_url_options
 	  { host: ENV["DOMAIN"] || "localhost:3000" }
