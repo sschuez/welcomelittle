@@ -6,7 +6,7 @@ class ObituaryPolicy < ApplicationPolicy
   end
 
   def create?
-  	user_or_admin
+  	true
   end
 
   def show?

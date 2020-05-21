@@ -1,3 +1,7 @@
+<!-- SEO -->
+<% content_for :meta_title, "Alles veröffentlichten Todesanzeigen auf #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Einfach nach Vor- oder Nachname suchen, oder einfach den letzten Wohnort der Person, die sie suchen, eingeben. Drücken sie ihre Gefühle und ihr Beileid aus, indem sie einen Kommentar auf der Traueranzeiige ihrer geliebten Person hinterlassen." %>
+<%# content_for :meta_image, cl_image_path(@offer.photo.path) %>
 
 <div class="container-fluid">
 	
@@ -22,7 +26,7 @@
 					
 					<div class="user-obituary-details">
 						<p><strong><%= o.full_name %></strong></p>
-						<p class="publ-date">Veröffentlicht am: <%= o.created_at.strftime("%d.%m.%Y") %></p>
+						<p class="publ-date">Veröffentlicht am <%= o.created_at.strftime("%d.%m.%Y") %></p>
 					</div>
 				
 				</div>

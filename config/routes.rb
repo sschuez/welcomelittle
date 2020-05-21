@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   # Friendly Obituary_Memories
   get '/:friendly_id/erinnerungen', to: 'memories#index'
   get '/:friendly_id/erinnerungen/new', to: 'memories#new', as: :new_memory
-  post '/:friendly_id/erinnerungen', to: 'memories#create'
+  post '/:friendly_id/erinnerungen/new', to: 'memories#create'
   get '/:friendly_id/erinnerungen/show', to: 'memories#show', as: :memory
   get '/:friendly_id/erinnerungen/edit', to: 'memories#edit', as: :edit_memory
   patch '/:friendly_id/erinnerungen', to: 'memories#update'

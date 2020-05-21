@@ -1,3 +1,8 @@
+<!-- SEO -->
+<% content_for :meta_title, "In Erinnerung and #{@obituary.full_name} wurde eine Traueranzeige auf #{DEFAULT_META["meta_product_name"]} veröffentlicht" %>
+<% content_for :meta_description, "Wir nehmen Abschied von #{@obituary.full_name} und möchte mit euch einen Nachruf teilen. In Frieden - #{@obituary.full_name}." %>
+<%# content_for :meta_image, cl_image_path(@offer.photo.path) %>
+
 <%= render 'author_notice' %>
 <br>
 <div class="container-fluid">
@@ -67,11 +72,11 @@
 
 						<% end %>
 
-						<% if @obituary.memories.present? %>
+						<%# if @obituary.memories.present? %>
 						  <li class="nav-item">
 						    <a class="flex-sm-fill text-sm-center nav-link" id="erinnerungen-tab" data-toggle="tab" href="#erinnerungen" role="tab" aria-controls="erinnerungen" aria-selected="false">Erinnerungen</a>
 						  </li>
-						<% end %>
+						<%# end %>
 						
 						<%# if @obituary.events.present? %>
 						  <li class="nav-item">
@@ -109,11 +114,24 @@
 
 						<% end %>
 						
-						<% if @obituary.memories.present? %>
-						  <div class="tab-pane fade" id="erinnerungen" role="tabpanel" aria-labelledby="erinnerungen-tab">
-								<p>Work in Progress</p>
-						  </div>
-						<% end %>
+					  <div class="tab-pane fade" id="erinnerungen" role="tabpanel" aria-labelledby="erinnerungen-tab">
+							<% if @obituary.memories.present? %>
+								
+								<% @obituary.memories.each do |m| %>	
+									<p><%= m.description %></p>
+									<p>Erstellt von <%= m.user.full_name %></p>
+								<% end %>
+							
+							<% else %>
+							
+								<p>
+									Es wurden bisher noch keine Erinnerungen geteilt. Teilen sie hier eine Erinnerung mit den Hinterbliebenen.
+								</p>
+								<%= link_to "Erinnerung erstellen", new_memory_path(@obituary), class: "btn btn-flat" %>
+
+							<% end %>
+					  </div>
+
 
 						<%# if @obituary.events.present? %>
 						  <div class="tab-pane fade" id="veranstaltungen" role="tabpanel" aria-labelledby="veranstaltungen-tab">

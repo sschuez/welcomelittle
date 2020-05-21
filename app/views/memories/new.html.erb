@@ -1,1 +1,62 @@
-<h1>New</h1>
+<div class="container-fluid">
+	
+	<h2 class="container-title">Neue Erinnerung</h2>
+	
+	<div class="container-user">
+
+		<div class="row">
+			<div class="col">
+
+				<%= simple_form_for [ @obituary, @memory ], url: new_memory_path do |f| %>
+
+					<%#= f.input :photo, 
+											as: :file, 
+											label: "Erinnerungsbild", 
+											:folder => "in-frieden.ch", 
+											hint: "laden sie hier ein Foto der Person hoch. Es wird anschliessend automatisch auf das richtige Format zugeschnitten und ist nach dem Speichern ersichtlich." %>
+							
+					<div class="form-group">
+						<%= f.input :description, 
+												class: 'form-control', 
+												label: "Beschreibung der Erinnerung", 
+												hint: "dieses Feld ist optional" %> 
+					</div>
+					
+					<div class="form-group trix">
+						<%#= f.label :content, "Kurzprofil" %>
+						<%#= f.rich_text_area :content, 
+																	class: 'form-control', 
+																	placeholder: "Schreiben sie hier ihren ersten Entwurf für einen persönlichen Nachruf. Sie können diese Feld auch später bearbeiten um die verschiedenen Hifstools von in-frieden.ch nutzen zu können." %> 
+					</div>
+					
+					<!-- Error messages -->
+					<% if @memory.errors.any? %>
+						<div class="errors-container">
+							<ul>
+							  <% @memory.errors.full_messages.each do |message| %>
+							    <li><%= message %></li>
+							  <% end %>
+							</ul>
+						</div>
+					<% end %>
+
+					<br>
+					<%= f.button :submit, "Erinnerung erstellen", class: 'btn btn-flat' %>
+
+				<% end %>
+
+			</div>
+		</div>
+
+	</div>	
+
+	<br>
+	<div class="container-title">
+	  <div class="contact-container">
+	    <p>Haben sie Fragen oder Anregungen? Schicken sie uns eine Nachricht.</p>
+	    <%= link_to "Feedback senden", new_contact_path, class: "btn btn-flat" %>
+	  </div>
+	</div>
+
+</div>
+
