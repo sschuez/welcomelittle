@@ -56,13 +56,15 @@
 						  </li>
 
 						<% else %>
+							
+							<% if user_signed_in? %>
+								<% if policy(@obituary).update? %>
+									<li class="nav-item">
+								    <a class="flex-sm-fill text-sm-center nav-link active" id="nachruf-tab" data-toggle="tab" href="#nachruf" role="tab" aria-controls="nachruf" aria-selected="true">Nachruf</a>
+								  </li>
+							 	<% end %>
+							<% end %>
 
-							<% if policy(@obituary).update? %>
-								<li class="nav-item">
-							    <a class="flex-sm-fill text-sm-center nav-link active" id="nachruf-tab" data-toggle="tab" href="#nachruf" role="tab" aria-controls="nachruf" aria-selected="true">Nachruf</a>
-							  </li>
-						 	<% end %>
-						 	
 						<% end %>
 
 						<% if @obituary.memories.present? %>
@@ -92,15 +94,17 @@
 
 						<% else %>
 
-							<% if policy(@obituary).update? %>
-								<div class="tab-pane fade show active" id="nachruf" role="tabpanel" aria-labelledby="nachruf-tab">
-									<div class="obituary-content">
-										<p>
-											Sie haben noch keinen Nachruf verfasst. Schreiben sie hier etwas persönliches über die verstorbene Person
-										</p>
-										<%= link_to "Text schreiben", obituary_text_path(@obituary), class: "btn btn-flat" %>
-									</div>
-						  	</div>
+							<% if user_signed_in? %>
+								<% if policy(@obituary).update? %>
+									<div class="tab-pane fade show active" id="nachruf" role="tabpanel" aria-labelledby="nachruf-tab">
+										<div class="obituary-content">
+											<p>
+												Sie haben noch keinen Nachruf verfasst. Schreiben sie hier etwas persönliches über die verstorbene Person
+											</p>
+											<%= link_to "Text schreiben", obituary_text_path(@obituary), class: "btn btn-flat" %>
+										</div>
+							  	</div>
+								<% end %>
 							<% end %>
 
 						<% end %>

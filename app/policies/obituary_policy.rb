@@ -11,7 +11,6 @@ class ObituaryPolicy < ApplicationPolicy
 
   def show?
   	true
-    # record.user == user || user.admin
   end
 
   def update?
