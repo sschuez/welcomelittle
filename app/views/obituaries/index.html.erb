@@ -1,12 +1,42 @@
-<div class="conatiner-fluid">
-	<div class="row">
-		<div class="col">
-			
+
+<div class="container-fluid">
+	
+
+	<h2 class="">Traueranzeigen</h2>
+	<br>
+	<div class="container-obituaries">
+		<div class="obituaries">
+				
 			<% @obituaries.each do |o| %>
 				<%= link_to obituary_path(o) do %>
-					<p><%= o.full_name %></p>
+				
+				<div class="card-user-obituary">
+					
+					<div class="user-obituary-img">
+						<% if o.photo.attached? %>
+							<%= cl_image_tag o.photo.key, width: 150, crop: :fill, gravity: :auto, :quality=>"auto:good", :alt => "Foto in Erinnerung an #{o.full_name}", class: "custom-img-obituary user" %>
+						<% else %>
+							<%= image_tag "cover.png", crop: :fill, class: "cover-img-obituary user", alt: "" %>
+			  		<% end %>
+					</div>
+					
+					<div class="user-obituary-details">
+						<p><strong><%= o.full_name %></strong></p>
+						<p class="publ-date">Veröffentlicht am: <%= o.created_at.strftime("%d.%m.%Y") %></p>
+					</div>
+				
+				</div>
 				<% end %>
 			<% end %>
+			
 		</div>
 	</div>
+
+	<div class="container-title">
+	  <div class="contact-container">
+	    <p>Haben sie Fragen oder Anregungen? Schicken sie uns eine Nachricht.</p>
+	    <%= link_to "Feedback senden", new_contact_path, class: "btn btn-flat" %>
+	  </div>
+	</div>
+
 </div>
