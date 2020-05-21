@@ -21,7 +21,21 @@
 	a:hover{
 		background-color: orange;
 	}
+
 }
+
+.pretender.author-notice {
+		background-color: #f1d9d4;
+		color: #4b3b47;
+		a {
+			border-color: #4b3b47; 
+			color: #4b3b47; 
+		}
+
+		a:hover {
+			background-color: #e7bbbc;
+		}
+	}
 
 // Smallest device
  @media (min-width: 100px) and (max-width: 575px) {

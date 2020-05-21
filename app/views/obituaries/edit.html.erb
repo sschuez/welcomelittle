@@ -1,1 +1,88 @@
-<%= render 'form', obituary: @obituary, user: @user %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			
+			<h2>Traueranzeige anpassen</h2>
+			<br>
+
+				<%= simple_form_for(@obituary) do |f| %>
+
+					<%= f.input :photo, 
+											as: :file, 
+											label: "Erinnerungsbild", 
+											:folder => "in-frieden.ch", 
+											hint: "laden sie hier ein Foto der Person hoch. Es wird anschliessend automatisch auf das richtige Format zugeschnitten und ist nach dem Speichern ersichtlich." %>
+							
+					<div class="form-group">
+						<%= f.input :first_name, 
+												class: 'form-control', 
+												label: "Name der Person", 
+												hint: "dieses Feld wird benötigt" %> 
+					</div>
+					
+					<div class="form-group">
+						<%= f.input :last_name, 
+												class: 'form-control', 
+												label: "Nachname", 
+												hint: "dieses Feld wird benötigt" %>
+					</div>
+
+					<div class="form-group">
+						<%#= f.label :residence, "Letzter Wohnort" %>
+						<%= f.input :residence, 
+												class: 'form-control', 
+												label: "Letzter Wohnort", 
+												hint: "diese Feld ist optional. Es hilft den Hinterbliebenen allerdings später die Traueranzeige zu finden." %> 
+					</div>
+
+					<div class="form-group">
+						<%= f.input :death_date, 
+												as: :date, 
+												class: 'form-control', 
+												label: "Todestag", 
+												hint: "diese Feld ist optional. Das Datun wird am Anfang der Traueranzeige ersichtlich sein", 
+												:start_year => 1900, 
+												# :end_year => 2010,
+        								:order => [:day, :month, :year] %> 
+					</div>
+
+						<div class="form-group">
+							<%= f.input :birth_date, 
+													as: :date, 
+													class: 'form-control', 
+													label: "Gebrutstag", 
+													hint: "diese Feld ist optional. Das Datun wird am Anfang der Traueranzeige ersichtlich sein", 
+													:start_year => 1900, 
+	        								:order => [:day, :month, :year] %> 
+					</div>
+
+					<div class="form-group trix">
+						<%= f.label :content, "Kurzprofil" %>
+						<%= f.rich_text_area :content, 
+																	class: 'form-control', 
+																	placeholder: "Schreiben sie hier ihren persönlichen Nachruf. Sie können diese Feld auch später bearbeiten um die verschiedenen Hifstools von in-frieden.ch nutzen zu können." %> 
+					</div>
+					
+					<!-- Error messages -->
+					<% if @obituary.errors.any? %>
+						<div class="errors-container">
+							<ul>
+							  <% @obituary.errors.full_messages.each do |message| %>
+							    <li><%= message %></li>
+							  <% end %>
+							</ul>
+						</div>
+					<% end %>
+
+					<br>
+					<!-- <p>Bevor die Seite veröffentlicht wird, können sie diese nochmals überprüfen.</p> -->
+					<%= f.button :submit, "Traueranzeige anpassen", class: 'btn btn-flat' %>
+
+				<% end %>
+
+				<br>
+
+		</div>
+	</div>	
+</div>
+

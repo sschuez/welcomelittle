@@ -10,7 +10,11 @@
 		<p>Todesanzeigen ganz einfach online publizieren und teilen.</p>
 		<p>Erzählen sie die Geschichte einer geliebten Person und teilen sie diese mit Familie und Freunden.</p>
 		<br>
-		<%= link_to "Hier starten", new_contact_path, class: "btn btn-outline-light btn-lg px-5" %>
+		<% if current_user == nil %>
+			<%= link_to "Hier starten", obituary_welcome_path, class: "btn btn-outline-light btn-lg px-5" %>
+		<% else %>
+			<%= link_to "Hier starten", new_obituary_path, class: "btn btn-outline-light btn-lg px-5" %>
+		<% end %>
   </div>
 </div>
 <!-- /banner -->
@@ -53,7 +57,13 @@
 	<br>
 
 	<div class="text-center">
-	<%= link_to "Hier starten", new_contact_path, class: "btn btn-flat btn-lg px-5" %>
+	
+		<% if current_user == nil %>
+			<%= link_to "Hier starten", obituary_welcome_path, class: "btn btn-flat btn-lg px-5" %>
+		<% else %>
+			<%= link_to "Hier starten", new_obituary_path, class: "btn btn-flat btn-lg px-5" %>
+		<% end %>
+
 	</div>
 
 </div>

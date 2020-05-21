@@ -1,6 +1,10 @@
+<%= render 'author_notice' %>
 <br>
 <div class="container-fluid">
+		<%= render "icons_top" %>
 	<div class="row">
+		
+
 		<div class="col container-obituary">
 			
 			<div class="profile-details">
@@ -45,30 +49,80 @@
 					
 				<div class="tab-header">
 					<ul class="flex-column flex-sm-row nav nav-tabs justify-content-center nav-justified" id="myTab" role="tablist">
-					  <li class="nav-item">
-					    <a class="flex-sm-fill text-sm-center nav-link active" id="nachruf-tab" data-toggle="tab" href="#nachruf" role="tab" aria-controls="nachruf" aria-selected="true">Nachruf</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="flex-sm-fill text-sm-center nav-link" id="erinnerungen-tab" data-toggle="tab" href="#erinnerungen" role="tab" aria-controls="erinnerungen" aria-selected="false">Erinnerungen</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="flex-sm-fill text-sm-center nav-link" id="veranstaltungen-tab" data-toggle="tab" href="#veranstaltungen" role="tab" aria-controls="veranstaltungen" aria-selected="false">Veranstaltungen</a>
-					  </li>
+						<% if @obituary.content.present? %>
+						  
+						  <li class="nav-item">
+						    <a class="flex-sm-fill text-sm-center nav-link active" id="nachruf-tab" data-toggle="tab" href="#nachruf" role="tab" aria-controls="nachruf" aria-selected="true">Nachruf</a>
+						  </li>
+
+						<% else %>
+
+							<% if policy(@obituary).update? %>
+								<li class="nav-item">
+							    <a class="flex-sm-fill text-sm-center nav-link active" id="nachruf-tab" data-toggle="tab" href="#nachruf" role="tab" aria-controls="nachruf" aria-selected="true">Nachruf</a>
+							  </li>
+						 	<% end %>
+						 	
+						<% end %>
+
+						<% if @obituary.memories.present? %>
+						  <li class="nav-item">
+						    <a class="flex-sm-fill text-sm-center nav-link" id="erinnerungen-tab" data-toggle="tab" href="#erinnerungen" role="tab" aria-controls="erinnerungen" aria-selected="false">Erinnerungen</a>
+						  </li>
+						<% end %>
+						
+						<%# if @obituary.events.present? %>
+						  <li class="nav-item">
+						    <a class="flex-sm-fill text-sm-center nav-link" id="veranstaltungen-tab" data-toggle="tab" href="#veranstaltungen" role="tab" aria-controls="veranstaltungen" aria-selected="false">Veranstaltungen</a>
+						  </li>
+						<%# end %>
+
 					</ul>
 				</div>
 
 					<div class="tab-content" id="myTabContent">
-					  <div class="tab-pane fade show active" id="nachruf" role="tabpanel" aria-labelledby="nachruf-tab">
-							<p><%= @obituary.content %></p>
-					  </div>
-					  <div class="tab-pane fade" id="erinnerungen" role="tabpanel" aria-labelledby="erinnerungen-tab">
-							<p>Work in Progress</p>
-					  </div>
-					  <div class="tab-pane fade" id="veranstaltungen" role="tabpanel" aria-labelledby="veranstaltungen-tab">
-							<p>Work in Progress</p>
-					  </div>
+						
+						<% if @obituary.content.present? %>
+						  <div class="tab-pane fade show active" id="nachruf" role="tabpanel" aria-labelledby="nachruf-tab">
+								<div class="obituary-content">
+									<%= render 'icons_top_content' %>
+									<p><%= @obituary.content %></p>
+								</div>
+						  </div>
+
+						<% else %>
+
+							<% if policy(@obituary).update? %>
+								<div class="tab-pane fade show active" id="nachruf" role="tabpanel" aria-labelledby="nachruf-tab">
+									<div class="obituary-content">
+										<p>
+											Sie haben noch keinen Nachruf verfasst. Schreiben sie hier etwas persönliches über die verstorbene Person
+										</p>
+										<%= link_to "Text schreiben", obituary_text_path(@obituary), class: "btn btn-flat" %>
+									</div>
+						  	</div>
+							<% end %>
+
+						<% end %>
+						
+						<% if @obituary.memories.present? %>
+						  <div class="tab-pane fade" id="erinnerungen" role="tabpanel" aria-labelledby="erinnerungen-tab">
+								<p>Work in Progress</p>
+						  </div>
+						<% end %>
+
+						<%# if @obituary.events.present? %>
+						  <div class="tab-pane fade" id="veranstaltungen" role="tabpanel" aria-labelledby="veranstaltungen-tab">
+								<p>Work in Progress</p>
+						  </div>
+						<%# end %>
+
 					</div>
 
+			</div>
+
+			<div class="published-at">
+				<p>Publiziert am <%= @obituary.created_at.strftime("%d.%m.%Y") %></p>
 			</div>
 
 		</div>

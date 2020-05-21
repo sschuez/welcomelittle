@@ -6,7 +6,7 @@ class ObituaryPolicy < ApplicationPolicy
   end
 
   def create?
-  	record.user == user || user.admin
+  	user_or_admin
   end
 
   def show?
@@ -15,6 +15,24 @@ class ObituaryPolicy < ApplicationPolicy
   end
 
   def update?
-  	record.user == user || user.admin
+  	user_or_admin
+  end
+
+  def destroy?
+    user_or_admin
+  end
+
+  def text?
+    user_or_admin
+  end
+
+  def destroy_text?
+    user_or_admin
+  end
+
+  private
+
+  def user_or_admin
+    record.user == user || user.admin
   end
 end

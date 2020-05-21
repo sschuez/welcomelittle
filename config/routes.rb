@@ -22,11 +22,16 @@ Rails.application.routes.draw do
 
   # Friendly Obituaries
   resources :obituaries, only: [:new, :create, :index], :path => 'traueranzeigen'
-  get '/traueranzeigen/willkommen', to: 'obituaries#welcome', as: :obituary_welcome
+
   get '/:friendly_id', to: 'obituaries#show', as: :obituary
   get '/:friendly_id/edit', to: 'obituaries#edit', as: :edit_obituary
   patch '/:friendly_id', to: 'obituaries#update'
   delete '/:friendly_id', to: 'obituaries#destroy'
+
+  get '/:friendly_id/text', to: 'obituaries#text', as: :obituary_text
+  post '/:friendly_id', to: 'obituaries#destroy_text', as: :obituary_text_destroy
+
+  get '/traueranzeigen/willkommen', to: 'obituaries#welcome', as: :obituary_welcome
 
   # Friendly Obituary_Memories
   get '/:friendly_id/erinnerungen', to: 'memories#index'

@@ -1,0 +1,32 @@
+<br>
+<div class="container-fluid">
+
+		<div class="icons-top">
+			<div class="icon-back">
+			<%= link_to users_path, class: "btn btn-back" do %>
+				<i class="fas fa-arrow-left"></i>
+			<% end %>
+			</div>
+		</div>
+	<div class="row">
+
+		<div class="col container-obituary">
+			
+			<%= simple_form_for(@obituary) do |f| %>
+				<div class="form-group">
+					<%#= f.label :content, "Kurzprofil" %>
+					<%= f.rich_text_area :content, 
+																class: 'form-control', 
+																placeholder: "Schreiben sie hier ihren persönlichen Nachruf." %> 
+				</div>
+
+				<br>
+				<!-- <p>Bevor die Seite veröffentlicht wird, können sie diese nochmals überprüfen.</p> -->
+				<%= f.button :submit, "Traueranzeige anpassen", class: 'btn btn-flat' %>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>
+<br>

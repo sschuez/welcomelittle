@@ -1,0 +1,7 @@
+<% if current_user == @obituary.user %>
+	<div class="pretender author-notice">
+		<i class="fas fa-eye mr-3"></i>
+		Unten sehen sie, wie ihre Traueranzeige aussieht
+			<%= link_to "Anpassen", edit_obituary_path(@obituary) %>
+	</div>
+<% end %>

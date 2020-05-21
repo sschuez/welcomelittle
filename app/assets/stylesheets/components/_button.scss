@@ -117,5 +117,18 @@
 
 .icon-back{
   margin-right: auto;
+  .fa-arrow-left {
+    color: #7B5C59;
+  }
+}
+
+.obituary-content {
+  position: relative;
+}
+
+.icons-top.content {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 

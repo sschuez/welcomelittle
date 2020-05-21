@@ -73,6 +73,15 @@
 	margin-left: 12px;	
 }
 
+.published-at {
+	text-align: right;
+	p{
+		font-size: 12px;
+		margin-bottom: -12px;
+		color: rgb(119, 116, 116);
+	}
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .profile-details {

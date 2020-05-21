@@ -1,6 +1,6 @@
 class ObituariesController < ApplicationController
 	skip_before_action :authenticate_user!, only: [:index, :show, :welcome]
-
+	before_action :set_obituary, only: [:show, :edit, :update, :destroy, :text, :destroy_text]
 	def index
 		@obituaries = Obituary.all
 
@@ -28,35 +28,21 @@ class ObituariesController < ApplicationController
 	end
 
 	def show
-		@obituary = Obituary.friendly.find(params[:friendly_id])
-		authorize @obituary
-		@user = @obituary.user
 	end
 
 	def edit
-		@obituary = Obituary.friendly.find(params[:friendly_id])
-		authorize @obituary
-		@user = @obituary.user
 	end
 
 	def update
-		@obituary = Obituary.friendly.find(params[:friendly_id])
-		authorize @obituary
-		@user = @obituary.user
-
 		if @obituary.update(obituary_params)
 			redirect_to obituary_path(@obituary)
-			flash[:notice] = "Traueranzeige für #{@obituary.full_name} wurde angepasst"
+			flash[:notice] = "Traueranzeige von #{@obituary.full_name} wurde angepasst"
 		else
 			render :edit
 		end
 	end
 
 	def destroy
-		@obituary = Obituary.friendly.find(params[:friendly_id])
-		authorize @obituary
-		@user = @obituary.user
-
 		@obituary.destroy
 		redirect_to user_path(@user)
 		flash[:notice] = "Traueranzeige für #{@obituary.full_name} wurde gelöscht"
@@ -66,7 +52,24 @@ class ObituariesController < ApplicationController
 		skip_authorization
 	end
 
+	def text
+	end
+
+	def destroy_text
+		@obituary.content = ''
+		@obituary.save
+		redirect_to obituary_path(@obituary)
+		flash[:notice] = "Text von #{@obituary.full_name}s Traueranzeige wurde entfernt"
+	end
+
+
 	private
+
+	def set_obituary
+		@obituary = Obituary.friendly.find(params[:friendly_id])
+		authorize @obituary
+		@user = @obituary.user
+	end
 
 	def obituary_params
 		params.require(:obituary).permit(:first_name, :last_name, :residence, :death_date, :birth_date, :cause_of_death, :final_resting_place, :photo, :relation, :content)
