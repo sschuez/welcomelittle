@@ -55,8 +55,14 @@
 		<div class="user-obituaries">
 
 			<% if @user.obituaries.empty? %>
+
 				<p>Sie haben noch keine Traueranzeige aufgeschaltet</p>
+				<div>
+					<%= link_to "Traueranzeige erstellen", new_obituary_path, class: "btn btn-flat" %>
+				</div>
+
 			<% else %>
+				
 				<% @user.obituaries.each do |o| %>
 					<%= link_to obituary_path(o) do %>
 					
@@ -78,6 +84,7 @@
 					</div>
 					<% end %>
 				<% end %>
+			
 			<% end %>
 		</div>
 	</div>
