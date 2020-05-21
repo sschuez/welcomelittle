@@ -1,4 +1,6 @@
 class Memory < ApplicationRecord
   belongs_to :obituary
-  has_one :user, through: :obituary
+  belongs_to :user
+
+  has_rich_text :content
 end

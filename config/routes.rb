@@ -38,8 +38,8 @@ Rails.application.routes.draw do
   get '/:friendly_id/erinnerungen/new', to: 'memories#new', as: :new_memory
   post '/:friendly_id/erinnerungen/new', to: 'memories#create'
   get '/:friendly_id/erinnerungen/show', to: 'memories#show', as: :memory
-  get '/:friendly_id/erinnerungen/edit', to: 'memories#edit', as: :edit_memory
-  patch '/:friendly_id/erinnerungen', to: 'memories#update'
-  delete '/:friendly_id/erinnerungen', to: 'memories#destroy'
+  get '/:friendly_id/erinnerungen/:id/edit', to: 'memories#edit', as: :edit_memory
+  patch '/:friendly_id/erinnerungen/:id', to: 'memories#update', as: :update_memory
+  delete '/:friendly_id/erinnerungen/:id', to: 'memories#destroy', as: :destroy_memory
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_103249) do
+ActiveRecord::Schema.define(version: 2020_05_21_161931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,7 +89,9 @@ ActiveRecord::Schema.define(version: 2020_05_15_103249) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["obituary_id"], name: "index_memories_on_obituary_id"
+    t.index ["user_id"], name: "index_memories_on_user_id"
   end
 
   create_table "obituaries", force: :cascade do |t|
@@ -128,5 +130,6 @@ ActiveRecord::Schema.define(version: 2020_05_15_103249) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "memories", "obituaries"
+  add_foreign_key "memories", "users"
   add_foreign_key "obituaries", "users"
 end

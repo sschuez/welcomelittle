@@ -1,0 +1,64 @@
+.memory {
+  display: grid;
+  align-items: center;
+  margin-bottom: 8px;
+  background-color: #fffefc;
+  padding: 8px 16px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  grid-template-columns: 20% 60% 20%;
+  grid-gap: 0px;
+  // height: 80px;
+  position: relative;
+}
+
+.memory .memory-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+
+.memory p {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 10px;
+}
+
+.memory small {
+  color: #999999;
+  font-weight: bold;
+}
+.memory .memory-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.memory:hover .memory-actions {
+  opacity: 1;
+}
+
+.memory .memory-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.memory .memory-actions a:hover {
+  color: #555555;
+}
+
+.author-section {
+  // text-align: center;
+  padding: 18px;
+
+  .fa-user-circle {
+    font-size: 18px;
+  }
+}
+
+
+.updated-at {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}

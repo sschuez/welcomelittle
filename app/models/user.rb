@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   has_many :obituaries
   has_one_attached :photo
-  has_many :memories, through: :obituaries
+  has_many :memories
 
   validates :first_name, :last_name, presence: true
 

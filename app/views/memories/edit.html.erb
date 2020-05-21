@@ -1,13 +1,14 @@
 <div class="container-fluid">
 	
-	<h2 class="container-title">Neue Erinnerung</h2>
+	<h2 class="container-title">Erinnerung Anpassen</h2>
+	<p class="container-title">Passen sie ihre Erinnerung mit <strong><%= @obituary.full_name %></strong> an</p>
 	
 	<div class="container-user">
 
 		<div class="row">
 			<div class="col">
 
-				<%= simple_form_for [ @obituary, @memory ], url: new_memory_path do |f| %>
+				<%= simple_form_for [ @obituary, @memory ], url: update_memory_path do |f| %>
 
 					<%#= f.input :photo, 
 											as: :file, 
@@ -41,7 +42,7 @@
 					<% end %>
 
 					<br>
-					<%= f.button :submit, "Erinnerung erstellen", class: 'btn btn-flat' %>
+					<%= f.button :submit, "Erinnerung anpassen", class: 'btn btn-flat' %>
 
 				<% end %>
 
