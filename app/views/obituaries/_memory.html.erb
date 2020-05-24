@@ -2,7 +2,6 @@
 
 <div class="memory">
 	<div class="author-section">
-  	<p>Erstellt von <strong><%= m.user.full_name %></strong> am <%= m.created_at.strftime("%d.%m.%Y") %></p>
 		<% if m.user.photo.attached? %>
 			<%= cl_image_tag m.user.photo.key, :transformation=>[
 		  	  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"thumb"},
@@ -11,25 +10,36 @@
 		<% else %>
 			<i class="far fa-user-circle"></i>
 		<% end %>
+  	<p>Erstellt von <strong><%= m.user.full_name %></strong> am <%= m.created_at.strftime("%d.%m.%Y") %></p>
   	<!-- <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar" /> -->
 		
 	</div>
   <div class="memory-content">
     <p><small><%= m.description %></small></p>
-    <p><%= m.content %></p>
+    <p id="memory-text"><%= m.content %></p>
   </div>
 
   <div class="memory-actions">
-  	<%= link_to edit_memory_path(@obituary, m) do %>
-    	<i class="fas fa-pencil-alt"></i>
-    <% end %>
+			
+			<% if policy(m).edit? %>
+		  	<%= link_to edit_memory_path(@obituary, m), class: "btn" do %>
+		  		<i class="fas fa-edit"></i>
+		  	<% end %>
+		  <% end %>
 
-    <%= link_to destroy_memory_path(@obituary, m),
-    							method: :delete,
-    							data: { confirm: "Sind sie sicher, dass sie ihre Erinnerung mit #{@obituary.full_name} löschen wollen?"},
-    							class: "btn" do %>
-			<i class="far fa-trash-alt"></i>
-		<% end %>
+			<% if policy(m).destroy? %>
+		  	<%= link_to destroy_memory_path(@obituary, m),
+		  								method: :delete,
+		  								data: { confirm: "Sind sie sicher, dass sie ihre Erinnerung mit #{@obituary.full_name} löschen wollen?"},
+		  								class: "btn" do %>
+		  		<i class="fas fa-trash-alt"></i>
+		  	<% end %>
+	  	<% end %>
+
+	  	<%# if policy(@obituary).edit? %>
+				<!-- <i class="fas fa-eye-slash"></i> -->
+	  	<%# end %>
+
   </div>
 
   <div class="updated-at">

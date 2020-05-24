@@ -142,7 +142,7 @@
 			</div>
 
 			<div class="published-at">
-				<p>Publiziert am <%= @obituary.created_at.strftime("%d.%m.%Y") %></p>
+				<p>Publiziert von <strong class="strong"><%= @obituary.user.full_name %></strong> am <%= @obituary.created_at.strftime("%d.%m.%Y") %></p>
 			</div>
 
 		</div>

@@ -6,7 +6,7 @@
   padding: 8px 16px;
   box-shadow: 0 0 6px rgba(0,0,0,0.2);
   border-radius: 5px;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 1fr;
   grid-gap: 0px;
   // height: 80px;
   position: relative;
@@ -14,7 +14,12 @@
 
 .memory .memory-content {
   flex-grow: 1;
-  padding: 0 24px;
+  padding: 0 12px;
+
+  .trix-content div {
+    font-size: 12px;
+  }
+
 }
 
 .memory p {
@@ -25,40 +30,65 @@
 
 .memory small {
   color: #999999;
+  font-size: 12px;
   font-weight: bold;
+  margin-bottom: 12px;
 }
 .memory .memory-actions {
-  opacity: 0;
+  // opacity: 0;
   display: flex;
-  transition: ease .3s;
+  // transition: ease .3s;
 }
 
-.memory:hover .memory-actions {
-  opacity: 1;
-}
 
 .memory .memory-actions a {
-  color: #999999;
-  margin-left: 16px;
-  font-size: 14px;
+ font-size: 12px;
 }
 
-.memory .memory-actions a:hover {
-  color: #555555;
-}
 
 .author-section {
   // text-align: center;
-  padding: 18px;
+  padding: 6px;
+  display: flex;
+  margin-bottom: 6px;
 
   .fa-user-circle {
     font-size: 18px;
+    padding-top: 6px;
+  }
+  p {
+    padding-left: 12px;
+
   }
 }
-
 
 .updated-at {
   position: absolute;
   bottom: 12px;
   right: 12px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+ 
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+ 
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+ 
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+ 
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
 }
