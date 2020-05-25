@@ -2,6 +2,7 @@
   "name": "in_frieden",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.0.2-1",
     "@rails/activestorage": "^6.0.0",
@@ -11,6 +12,7 @@
     "flatpickr": "^4.6.3",
     "jquery": "^3.5.1",
     "mapbox-gl": "^1.10.1",
+    "places.js": "^1.18.2",
     "popper.js": "^1.16.1",
     "sweetalert": "^2.1.2",
     "trix": "^1.0.0",

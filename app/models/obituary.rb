@@ -11,6 +11,9 @@ class Obituary < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
+  geocoded_by :residence
+  after_validation :geocode, if: :will_save_change_to_residence?
+
 
   def full_name
   	"#{first_name} #{last_name}"

@@ -29,7 +29,8 @@
 
 					<div class="form-group">
 						<%#= f.label :residence, "Letzter Wohnort" %>
-						<%= f.input :residence, 
+						<%= f.input :residence,
+												input_html: { id: 'place-address' },
 												class: 'form-control', 
 												label: "Letzter Wohnort", 
 												hint: "diese Feld ist optional. Es hilft den Hinterbliebenen allerdings später die Traueranzeige zu finden." %> 

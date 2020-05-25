@@ -21,3 +21,8 @@ initMapbox();
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+
+import { initAutocomplete } from '../packs/init_autocomplete';
+
+initAutocomplete();
