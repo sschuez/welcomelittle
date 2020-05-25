@@ -42,4 +42,13 @@ Rails.application.routes.draw do
   patch '/:friendly_id/erinnerungen/:id', to: 'memories#update', as: :update_memory
   delete '/:friendly_id/erinnerungen/:id', to: 'memories#destroy', as: :destroy_memory
 
+  # Friendly Obituary_Events
+  get '/:friendly_id/veranstaltungen', to: 'events#index'
+  get '/:friendly_id/veranstaltungen/new', to: 'events#new', as: :new_event
+  post '/:friendly_id/veranstaltungen/new', to: 'events#create'
+  get '/:friendly_id/veranstaltungen/show', to: 'events#show', as: :event
+  get '/:friendly_id/veranstaltungen/:id/edit', to: 'events#edit', as: :edit_event
+  patch '/:friendly_id/veranstaltungen/:id', to: 'events#update', as: :update_event
+  delete '/:friendly_id/veranstaltungen/:id', to: 'events#destroy', as: :destroy_event
+
 end
