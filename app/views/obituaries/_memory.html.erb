@@ -20,6 +20,8 @@
   </div>
 
   <div class="memory-actions">
+
+		<% if user_signed_in? %>	
 			
 			<% if policy(m).edit? %>
 		  	<%= link_to edit_memory_path(@obituary, m), class: "btn" do %>
@@ -39,6 +41,8 @@
 	  	<%# if policy(@obituary).edit? %>
 				<!-- <i class="fas fa-eye-slash"></i> -->
 	  	<%# end %>
+
+	  <% end %>
 
   </div>
 
