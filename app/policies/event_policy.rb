@@ -4,4 +4,8 @@ class EventPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create?
+  	record.user == user || user.admin
+  end
 end

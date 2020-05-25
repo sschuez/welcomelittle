@@ -9,9 +9,8 @@ const initAutocomplete = () => {
 
 const reconfigurableOptions = {
   language: 'de', // Receives results in German
-  type: 'city', // Search only for cities names
-  aroundLatLngViaIP: false // disable the extra search/boost around the source IP
-  // postcodeSearch: true
+  // type: 'city', // Search only for cities names
+  // aroundLatLngViaIP: false // disable the extra search/boost around the source IP
 };
 // const placesInstance = places(fixedOptions).configure(reconfigurableOptions);
 

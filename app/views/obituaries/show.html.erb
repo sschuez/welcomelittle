@@ -127,14 +127,32 @@
 
 							<% end %>
 							<br>
+
 							<%= link_to "Erinnerung hinzufügen", new_memory_path(@obituary), class: "btn btn-flat" %>
 					  </div>
 					  <br>
 
 						<%# if @obituary.events.present? %>
 						  <div class="tab-pane fade" id="veranstaltungen" role="tabpanel" aria-labelledby="veranstaltungen-tab">
-								<p>Work in Progress</p>
+								<% if @obituary.events.present? %>
+
+									<%= render 'event' %>
+
+								<% else %>
+
+									<p>Es wurde bisher noch keine Veranstaltung geteilt.</p>
+
+								<% end %>
+								<br>
+								
+								<% if user_signed_in? %>
+									<% if policy(@obituary).new? %>
+										<%= link_to "Veranstaltung hinzufügen", new_event_path(@obituary), class: "btn btn-flat" %>
+									<% end %>
+								<% end %>
+								
 						  </div>
+						  <br>
 						<%# end %>
 
 					</div>
