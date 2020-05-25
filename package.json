@@ -10,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "flatpickr": "^4.6.3",
     "jquery": "^3.5.1",
+    "mapbox-gl": "^1.10.1",
     "popper.js": "^1.16.1",
     "sweetalert": "^2.1.2",
     "trix": "^1.0.0",

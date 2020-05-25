@@ -9,3 +9,15 @@ import "bootstrap";
 // import { previewImageOnFileSelect } from '../packs/photo_preview';
 
 // previewImageOnFileSelect();
+
+
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
+// internal imports
+import { initMapbox } from '../packs/init_mapbox';
+
+initMapbox();
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})

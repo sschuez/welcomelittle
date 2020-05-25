@@ -25,6 +25,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'carrierwave'
 gem 'cloudinary', '~> 1.12.0'
 gem 'pretender'
+gem 'geocoder'
 
 # Rails Admin
 gem 'remotipart', github: 'mshibuya/remotipart'
