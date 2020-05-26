@@ -5,5 +5,7 @@ class Event < ApplicationRecord
 	has_rich_text :content
 
 	geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address? 
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  validates :name, presence: true
 end
