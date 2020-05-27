@@ -28,6 +28,14 @@ class ObituariesController < ApplicationController
 	end
 
 	def show
+		@markers = @obituary.events.map do |event|
+		  {
+		    lat: event.latitude,
+		    lng: event.longitude,
+		    infoWindow: render_to_string(partial: "info_window", locals: { event: event }),
+		    id: event.id
+		  }
+		end
 	end
 
 	def edit

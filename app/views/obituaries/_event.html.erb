@@ -1,10 +1,35 @@
 <% @obituary.events.each do |e| %>
 
-<div class="event">
+<div class="event" data-event-id="<%= e.id %>">
 	
-	<!-- Icons edit & delete top -->
+
+	<div class="event-information">
+		<p><strong class="strong"><%= @obituary.full_name %></strong></p>
+		<h2><%= e.name %></h2>
+		
+		<% if e.content.present? %>
+			<p><%= e.content %></p>
+		<% end %>
+		
+		<% if e.address.present? %>
+			<p><strong class="strong">Ort:</strong> <%= e.address %></p>
+		<% end %>
+
+		<% if e.date.present? %>
+			<p><strong class="strong">Datum:</strong> <%= e.date.strftime('%d.%m.%Y') %></p>
+		<% end %>
+
+		<% if e.time.present? %>
+			<p><strong class="strong">Uhrzeit:</strong> <%= e.time.strftime('%k:%M') %> Uhr</p>
+		<% end %>
+	</div>
+
+	<%= link_to "Öffnen", event_path(@obituary, e), class: "btn btn-flat px-5" %>
+	<br>
+	
+	<!-- Icons edit & delete bottom -->
 	<% if user_signed_in? %>
-		<div class="icons-top">
+		<div class="memory-actions">
 
 			<% if policy(@obituary).update? %>
 				<!-- <div class="icon-edit"> -->
@@ -28,23 +53,6 @@
 		</div>
 	<% end %>
 
-	<div class="event-location">
-
-		<% markers = { 	lat: e.latitude,
-										lng: e.longitude }
-										# infoWindow: render_to_string(partial: "info_window", locals: { event: e }) } %>
-		
-		<div id="map"
-		     style="width: 100%; height: 200px;"
-		     data-markers="<%= markers.to_json %>"
-		     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-		     	
-		</div>
-	</div>
-
-	<div class="event-information">
-		<h2><%= e.name %></h2>
-	</div>
 </div>
 
 <% end %>

@@ -1,0 +1,25 @@
+<!-- Icons edit & delete top -->
+<% if user_signed_in? %>
+	<div class="icons-top">
+
+		<% if policy(@obituary).update? %>
+			<div class="icon-edit">
+				<%= link_to edit_event_path(@obituary, @event), class: "btn" do %>
+			  	<i class="fas fa-edit"></i>
+				<% end %>
+			</div>
+		<% end %>
+
+		<% if policy(@obituary).destroy? %>
+			<div class="icon-delete">
+				<%= link_to event_path(@obituary, @event),
+				      method: :delete,
+				      data: { confirm: "Sind sie sicher, dass sie die Veranstaltung #{@event.name} löschen wollen?" },
+				      class: "btn" do %>
+						<i class="fas fa-trash-alt"></i>
+				<% end %>
+			</div>
+		<% end %>
+
+	</div>
+<% end %>

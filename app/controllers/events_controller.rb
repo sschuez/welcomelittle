@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+	skip_before_action :authenticate_user!, only: [:index, :show]
 
 	def index
 	  @events = policy_scope(Event).geocoded # returns events with coordinates
@@ -11,6 +12,18 @@ class EventsController < ApplicationController
 	      infoWindow: render_to_string(partial: "info_window", locals: { event: event })
 	    }
 	  end
+	end
+
+	def show
+		@obituary = Obituary.friendly.find(params[:friendly_id])
+		@event = Event.find(params[:id])
+  	authorize @event
+
+  	@markers = [{
+  		      lat: @event.latitude,
+  		      lng: @event.longitude,
+  		      infoWindow: render_to_string(partial: "info_window", locals: { event: @event })
+  		    }]
 	end
 
 	def new
@@ -62,7 +75,7 @@ class EventsController < ApplicationController
 
 		@event.destroy
 		redirect_to obituary_path(@obituary)
-		flash[:notice] = "Erinnerung mit #{@obituary.full_name} wurde gelöscht"
+		flash[:notice] = "Veranstaltung #{@event.name} wurde gelöscht"
 	end
 
 	private

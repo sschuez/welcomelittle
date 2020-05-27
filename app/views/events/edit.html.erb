@@ -1,0 +1,79 @@
+<div class="container-fluid">
+	
+	<h2 class="container-title">Veranstaltung anpassen</h2>
+	
+	<div class="container-user">
+
+		<div class="row">
+			<div class="col">
+
+				<%= simple_form_for [ @obituary, @event ], url: update_event_path do |f| %>
+
+					<div class="form-group">
+						<%= f.input :name, 
+												class: 'form-control', 
+												label: "Name der Veranstaltung",
+												hint: "hier können zum Beispiel eine Beerdigung teilen" %> 
+					</div>
+					
+					<div class="form-group">
+						<%= f.input :date,
+												:order => [:day, :month, :year],
+												class: 'form-control', 
+												label: "Datum",
+												hint: "dieses Feld ist optional" %> 
+					</div>
+
+					<div class="form-group">
+						<%= f.input :time, 
+												class: 'form-control', 
+												label: "Zeit",
+												hint: "dieses Feld ist optional" %> 
+					</div>
+
+					<div class="form-group">
+						<%= f.input :address, 
+												class: 'form-control',
+												input_html: { id: "place-address"}, 
+												label: "Ort der Veranstaltung" %> 
+					</div>
+					
+					<div class="form-group trix">
+						<%= f.label :content, "Beschreibung der Veranstaltung" %>
+						<%= f.rich_text_area :content, 
+																	class: 'form-control', 
+																	placeholder: "Teilen sie hier alle relevanten Details zur Veranstaltung mit" %> 
+					</div>
+					
+					<!-- Error messages -->
+					<% if @event.errors.any? %>
+						<div class="errors-container">
+							<ul>
+							  <% @event.errors.full_messages.each do |message| %>
+							    <li><%= message %></li>
+							  <% end %>
+							</ul>
+						</div>
+					<% end %>
+
+					<br>
+					<%= f.button :submit, "Veranstaltung anpassen", class: 'btn btn-flat' %>
+
+				<% end %>
+
+			</div>
+		</div>
+
+	</div>	
+
+	<br>
+	<div class="container-title">
+	  <div class="contact-container">
+	    <p>Haben sie Fragen oder Anregungen? Schicken sie uns eine Nachricht.</p>
+	    <%= link_to "Feedback senden", new_contact_path, class: "btn btn-flat" %>
+	  </div>
+	</div>
+
+</div>
+
+
