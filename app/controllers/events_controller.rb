@@ -42,7 +42,7 @@ class EventsController < ApplicationController
 		@event.save
 
 		redirect_to obituary_path(@obituary)
-		flash[:notice] = "Neu Veranstaltung für #{@obituary.full_name} erstellt"
+		flash[:notice] = "Neue Veranstaltung für #{@obituary.full_name} erstellt"
 	end
 
 	def edit
