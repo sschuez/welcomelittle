@@ -19,11 +19,13 @@
 		    id: "search_query",
 		    placeholder: "Traueranzeigen finden (#{@obituaries.count})"
 	  	%>
-	    <button name="button" type="submit" class="btn btn-primary">
-	      <i class="fas fa-search"></i> Search
+	    <button name="button" type="submit" class="btn btn-flat">
+	      <i class="fas fa-search"></i> Suchen
 	    </button>
 	  </div>
 	<% end %>
+	<p class="small ml-1">suchen sie nach <strong class="strong">Vor- oder Nachnamen</strong>, nach letztem <strong class="strong">Wohnort</strong> oder nach Namen des <strong class="strong">Erstellers</strong></p>
+	<br>
 
 	<div class="container-obituaries">
 		<div class="obituaries">
