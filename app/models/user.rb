@@ -17,6 +17,9 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
+  include PgSearch::Model
+  multisearchable against: [:first_name, :last_name]
+
   # mount_uploader :photo, AvatarUploader
   
   def full_name

@@ -2,8 +2,21 @@ class ObituariesController < ApplicationController
 	skip_before_action :authenticate_user!, only: [:index, :show, :welcome]
 	before_action :set_obituary, only: [:show, :edit, :update, :destroy, :text, :destroy_text]
 	def index
-		@obituaries = Obituary.all
+		# @obituaries = Obituary.all
 
+
+		if params[:query].present?
+		      sql_query = " \
+		        obituaries.first_name @@ :query \
+		        OR obituaries.last_name @@ :query \
+		        OR obituaries.residence @@ :query \
+		        OR users.first_name @@ :query \
+		        OR users.last_name @@ :query \
+		      "
+		      @obituaries = Obituary.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+		    else
+		      @obituaries = Obituary.all
+		    end
 		skip_policy_scope
 	end
 

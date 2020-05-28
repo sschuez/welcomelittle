@@ -14,6 +14,18 @@ class Obituary < ApplicationRecord
   geocoded_by :residence
   after_validation :geocode, if: :will_save_change_to_residence?
 
+  include PgSearch::Model
+
+  pg_search_scope :global_search,
+    against: [ :first_name, :last_name, :residence ],
+    associated_against: {
+      user: [ :first_name, :last_name ]
+    },
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
+  multisearchable against: [:first_name, :last_name, :residence]
 
   def full_name
   	"#{first_name} #{last_name}"

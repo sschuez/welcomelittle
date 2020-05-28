@@ -1,3 +1,13 @@
+<!-- SEO -->
+<% content_for :meta_title, "#{@event.name} - Veranstaltung in Erinnerung an #{@obituary.full_name}" %>
+<% if @event.content.present? %>
+	<% content_for :meta_description, "In Erinnerung an #{@obituary.full_name} wurde eine Veranstaltung auf #{DEFAULT_META["meta_product_name"]} veröffentlicht. #{@event.content.to_s.delete_prefix('<div class="trix-content">
+  <div>').gsub('</div>', '')}" %>
+<% else %>
+	<% content_for :meta_description, "In Erinnerung an #{@obituary.full_name} wurde eine Veranstaltung auf #{DEFAULT_META["meta_product_name"]} veröffentlicht. Alle Details zur Veranstaltung #{@event.name} finden sie under dem Link." %>
+<% end %>
+<%# content_for :meta_image, cl_image_path(@offer.photo.path) %>
+
 <br>
 <div class="container-fluid">
 	<%= render 'icons_top' %>
