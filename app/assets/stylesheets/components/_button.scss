@@ -87,8 +87,31 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  i {
+    font-weight: 400;
+  }
+
+  i:hover {
+    font-weight: bold;
+  }
 }
 
+.icons-top-index {
+  // direction: ltr;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  i {
+    font-weight: 400;
+  }
+
+  i:hover {
+    font-weight: bold;
+  }
+}
 
 
 .icons-top.container-title {

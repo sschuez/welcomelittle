@@ -2,19 +2,19 @@
 <% if user_signed_in? %>
 	<div class="icons-top-index">
 
-		<% if policy(@obituary).update? %>
+		<% if policy(obituary).update? %>
 			<!-- <div class="icon-edit"> -->
-				<%= link_to obituary_text_path(@obituary), class: "btn" do %>
+				<%= link_to edit_obituary_path(obituary), class: "btn" do %>
 			  	<i class="fas fa-edit"></i>
 				<% end %>
 			<!-- </div> -->
 		<% end %>
 
-		<% if policy(@obituary).update? %>
+		<% if policy(obituary).destroy? %>
 			<!-- <div class="icon-delete"> -->
-				<%= link_to obituary_text_destroy_path(@obituary),
-				      method: :post,
-				      data: { confirm: "Sind sie sicher, dass sie den Text von #{@obituary.full_name}s Traueranzeige löschen wollen?" },
+				<%= link_to obituary_path(obituary),
+				      method: :delete,
+				      data: { confirm: "Sind sie sicher, dass sie die Traueranzeige von #{obituary.full_name} löschen wollen?" },
 				      class: "btn" do %>
 						<i class="fas fa-trash-alt"></i>
 				<% end %>

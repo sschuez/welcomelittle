@@ -15,6 +15,7 @@
 .memory .memory-content {
   flex-grow: 1;
   padding: 0 6px;
+  margin-bottom: 12px;
 
   .trix-content div {
     font-size: 12px;
@@ -65,7 +66,7 @@
 .updated-at {
   position: absolute;
   bottom: 12px;
-  right: 12px;
+  left: 12px;
 }
 
 // Smallest device

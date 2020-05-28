@@ -3,6 +3,7 @@
 <% content_for :meta_description, "Einfach nach Vor- oder Nachname suchen, oder einfach den letzten Wohnort der Person, die sie suchen, eingeben. Drücken sie ihre Gefühle und ihr Beileid aus, indem sie einen Kommentar auf der Traueranzeiige ihrer geliebten Person hinterlassen." %>
 <%# content_for :meta_image, cl_image_path(@offer.photo.path) %>
 
+<br>
 <div class="container-fluid">
 	
 
@@ -31,10 +32,12 @@
 		<div class="obituaries">
 				
 			<% @obituaries.each do |o| %>
-				<%= link_to obituary_path(o) do %>
 				
 				<div class="card-user-obituary">
+				
+				<%= render 'icons_top_index', obituary: o %>
 					
+				<%= link_to obituary_path(o) do %>
 					<div class="user-obituary-img">
 						<% if o.photo.attached? %>
 							<%= cl_image_tag o.photo.key, width: 150, crop: :fill, gravity: :auto, :quality=>"auto:good", :alt => "Foto in Erinnerung an #{o.full_name}", class: "custom-img-obituary user" %>
@@ -42,14 +45,16 @@
 							<%= image_tag "cover.png", crop: :fill, class: "cover-img-obituary user", alt: "" %>
 			  		<% end %>
 					</div>
-					
+				<% end %>
+
+				<%= link_to obituary_path(o) do %>
 					<div class="user-obituary-details">
 						<p><strong><%= o.full_name %></strong></p>
 						<p class="publ-date">Veröffentlicht am <%= o.created_at.strftime("%d.%m.%Y") %></p>
 					</div>
+				<% end %>
 				
 				</div>
-				<% end %>
 			<% end %>
 			
 		</div>
