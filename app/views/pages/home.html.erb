@@ -5,10 +5,10 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path(name_pic) %>');">
   <div class="container">
   		
-		<h1><strong>Würdigen sie ein wundervolles Leben</strong></h1>
+		<h1><strong>Würdigen Sie ein wundervolles Leben</strong></h1>
 		<br>
 		<p>Todesanzeigen ganz einfach online publizieren und teilen.</p>
-		<p>Erzählen sie die Geschichte einer geliebten Person und teilen sie diese mit Familie und Freunden.</p>
+		<p>Erzählen Sie die Geschichte einer geliebten Person und teilen Sie diese mit Familie und Freunden.</p>
 		<br>
 		<% if current_user == nil %>
 			<%= link_to "Hier starten", obituary_welcome_path, class: "btn btn-outline-light btn-lg px-5" %>
@@ -21,8 +21,8 @@
 
 <!-- cards -->
 <div class="container-fluid elevator-pitch py-5">
-	<h2 class="text-center mb-3">Wir sind für sie da</h2>
-	<p class="text-center mb-5">Eine geliebte Person zu verlieren ist schmerzvoll. Unsere Mission ist es, den Prozess vom Publizieren einer <strong class="strong">Traueranzeige möglichst einfach zu gestalten</strong> und unnötige Hürden zu entfernen, damit sie sich auf Dinge konzentrieren können, die wirklich wichtig sind.
+	<h2 class="text-center mb-3">Wir sind für Sie da</h2>
+	<p class="text-center mb-5">Eine geliebte Person zu verlieren ist schmerzvoll. Unsere Mission ist es, den Prozess vom Publizieren einer <strong class="strong">Traueranzeige möglichst einfach zu gestalten</strong> und unnötige Hürden zu entfernen, damit Sie sich auf Dinge konzentrieren können, die wirklich wichtig sind.
 </p>
 	
 	<div class="card-deck text-center">
@@ -31,7 +31,7 @@
 			<%#= image_tag "exchange_none.png", class: "card-img-top", style: "height: 100px; width: 100px;" %>
 			<div class="card-body">
 			  <h5 class="card-title">Einfach zu erstellen</h5>
-			  <p class="card-text">Erstellen sie eine teilbare Todesanzeige in form einer Webpage. Fügen sie eine Traueranzeige sowie ein paar Grundinformationen über ihre geliebte Person hinzu und teilen sie eine Foto. Das war's.</p>
+			  <p class="card-text">Erstellen Sie eine teilbare Todesanzeige in form einer Webpage. Fügen Sie eine Traueranzeige sowie ein paar Grundinformationen über Ihre geliebte Person hinzu und teilen Sie eine Foto. Das war's.</p>
 			</div>
 	  </div>
 
@@ -40,7 +40,7 @@
 			<%#= image_tag "layout_none.png", class: "card-img-top", style: "height: 100px; width: 100px;" %>
 			<div class="card-body">
 			  <h5 class="card-title">Einfach teilen</h5>
-			  <p class="card-text">in-frieden.ch macht es ihnen einfach, ihren Nachruf per Link zu teilen. So können sie z.B. eine stilvolle Email mit einem Direktlink zur Seite der Person versenden. Sie brauchen nur die Emailadressen.</p>
+			  <p class="card-text">in-frieden.ch macht es Ihnen einfach, Ihren Nachruf per Link zu teilen. So können Sie z.B. eine stilvolle Email mit einem Direktlink zur Seite der Person versenden. Sie brauchen nur die Emailadressen.</p>
 			</div>
 	  </div>
 
@@ -49,7 +49,7 @@
 			<%#= image_tag "newspaper_none.png", class: "card-img-top", style: "height: 100px; width: 100px;" %>
 			<div class="card-body">
 			  <h5 class="card-title">Gratis</h5>
-			  <p class="card-text">Die Publizierung ihrer Todesanzeige kostet sie nichts. Wir bei in-frieden.ch sind der Meinung, dass traditionelle Nachrufe in Zeitungen zu viel Kosten und wenig Mehrwert schaffen.</p>
+			  <p class="card-text">Die Publizierung ihrer Todesanzeige kostet Sie nichts. Wir bei in-frieden.ch sind der Meinung, dass traditionelle Nachrufe in Zeitungen zu viel Kosten und wenig Mehrwert schaffen.</p>
 			</div>
 	  </div>
 	</div>
@@ -76,14 +76,14 @@
 		Eine Todesanzeige in der Zeitung zu publizieren ist eine gute Möglichkeit eine <strong class="strong">einzigartige Lebensgeschichte mit der Welt zu teilen</strong>. Das Problem dabei: Zeitungen verlangen bis zu mehrere Tausend Franken für eine Traueranzeige, während die Leserzahlen der physischen Zeitungen stetig am sinken sind.
 	</p>
 	<p class="">
-		Bei <strong class="strong">in-frieden.ch können sie ihren Nachruf gezielt mit den Menschen teilen</strong>, die am Leben der verstorbenen Person beteiligt waren. Völlig kostenfrei.
+		Bei <strong class="strong">in-frieden.ch können Sie ihren Nachruf gezielt mit den Menschen teilen</strong>, die am Leben der verstorbenen Person beteiligt waren. Völlig kostenfrei.
 	</p>
 </div>
 
 <div class="container-fluid resources py-5">
 	<h2 class="">Nützliche Informationen</h2>
 	<br>
-	<p class="">Lesen sie <%= link_to "hier", articles_path, class: "artikel-link" %> zum Thema Todesanzeigen. Hier finden sie Hilfe und Anregung. Oder klicken sie eifach unten auf eine der Karten, dies sind unsere aktuellsten Artikel zum Thema Traueranzeigen.</p>
+	<p class="">Lesen sie <%= link_to "hier", articles_path, class: "artikel-link" %> zum Thema Todesanzeigen. Hier finden Sie Hilfe und Anregung. Oder klicken Sie eifach unten auf eine der Karten, dies sind unsere aktuellsten Artikel zum Thema Traueranzeigen.</p>
 
 	<div class="cards">
 	  <% @articles.each do |article| %>
@@ -105,7 +105,7 @@
 <!-- about -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path(name_pic_1) %>');">
 	<div class="container">
-		<h2 style="color: #edebe6;"><strong>Treten sie mit uns in Kontakt und helfen sie uns, Todesanzeigen besser zu machen.</strong></h2>
+		<h2 style="color: #edebe6;"><strong>Treten Sie mit uns in Kontakt und helfen Sie uns, Todesanzeigen besser zu machen.</strong></h2>
 		<br>
 		<%= link_to "Nachricht senden", new_contact_path, class: "btn btn-outline-light btn-lg px-5" %>
 	</div>

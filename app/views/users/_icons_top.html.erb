@@ -26,7 +26,7 @@
 		<div class="icon-delete">
 			<%= link_to user_path(@user),
 			      method: :delete,
-			      data: { confirm: "Sind sie sicher? Mit dem Löschen des Kontos (von #{@user.full_name}) werden auch alle dazugehörigen Nachrufe entfernt." },
+			      data: { confirm: "Sind Sie sicher, dass sie das Konto #{@user.full_name} löschen wollen?" },
 			      class: "btn" do %>
 					<i class="fas fa-trash-alt"></i>
 			<% end %>
