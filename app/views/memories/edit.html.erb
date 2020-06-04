@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	
 	<h2 class="container-title">Erinnerung Anpassen</h2>
-	<p class="container-title">Passen sie ihre Erinnerung mit <strong><%= @obituary.full_name %></strong> an</p>
+	<p class="container-title">Passen Sie ihre Erinnerung mit <strong><%= @obituary.full_name %></strong> an</p>
 	
 	<div class="container-user">
 
@@ -14,7 +14,7 @@
 											as: :file, 
 											label: "Erinnerungsbild", 
 											:folder => "in-frieden.ch", 
-											hint: "laden sie hier ein Foto der Person hoch. Es wird anschliessend automatisch auf das richtige Format zugeschnitten und ist nach dem Speichern ersichtlich." %>
+											hint: "laden Sie hier ein Foto der Person hoch. Es wird anschliessend automatisch auf das richtige Format zugeschnitten und ist nach dem Speichern ersichtlich." %>
 							
 					<div class="form-group">
 						<%= f.input :description, 
@@ -27,7 +27,7 @@
 						<%= f.label :content, "Beschreibung der Erinnerung" %>
 						<%= f.rich_text_area :content, 
 																	class: 'form-control', 
-																	placeholder: "Schreiben sie hier eine Erinnerung rein, die sie in Verbindung mit der verstorbenen Person teilen möchten." %> 
+																	placeholder: "Schreiben Sie hier eine Erinnerung rein, die Sie in Verbindung mit der verstorbenen Person teilen möchten." %> 
 					</div>
 					
 					<!-- Error messages -->
@@ -54,7 +54,7 @@
 	<br>
 	<div class="container-title">
 	  <div class="contact-container">
-	    <p>Haben sie Fragen oder Anregungen? Schicken sie uns eine Nachricht.</p>
+	    <p>Haben Sie Fragen oder Anregungen? Schicken Sie uns eine Nachricht.</p>
 	    <%= link_to "Feedback senden", new_contact_path, class: "btn btn-flat" %>
 	  </div>
 	</div>
