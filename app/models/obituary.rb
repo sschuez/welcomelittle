@@ -1,8 +1,8 @@
 class Obituary < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
-  has_many :memories
-  has_many :events
+  has_many :memories, dependent: :destroy
+  has_many :events, dependent: :destroy
 
   extend FriendlyId
   friendly_id :url_with_residence, :use => [:slugged, :history]
