@@ -27,6 +27,8 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'pretender'
 gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
+# gem 'bootstrap'
+# gem 'bootstrap-sass'
 
 # Rails Admin
 gem 'remotipart', github: 'mshibuya/remotipart'
