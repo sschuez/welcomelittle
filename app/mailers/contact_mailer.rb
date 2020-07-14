@@ -4,7 +4,7 @@ class ContactMailer < ApplicationMailer
     @contact = params[:contact]
     mail(
     	to: @contact.email, 
-    	subject: 'Ihre Nachricht an in-frieden.ch'
+    	subject: 'Your message to welcomlittle.com'
     	)
   end
 	
@@ -12,7 +12,7 @@ class ContactMailer < ApplicationMailer
   	@contact = params[:contact]
   	mail(
   		to: 'stephen.schuez@gmail.com',
-  		subject: 'Neue Nachricht an in-frieden.ch'
+  		subject: 'Neue Nachricht an welcomelittle.com'
   		)
   end
 
