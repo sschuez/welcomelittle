@@ -5,15 +5,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path(name_pic) %>');">
   <div class="container">
   		
-		<h1><strong>Würdigen Sie ein wundervolles Leben</strong></h1>
+		<h1><strong>Welcome to this world</strong></h1>
 		<br>
-		<p>Todesanzeigen ganz einfach online publizieren und teilen.</p>
-		<p>Erzählen Sie die Geschichte einer geliebten Person und teilen Sie diese mit Familie und Freunden.</p>
+		<p>Share with your friends the birth of your child.</p>
 		<br>
 		<% if current_user == nil %>
-			<%= link_to "Hier starten", obituary_welcome_path, class: "btn btn-outline-light btn-lg px-5" %>
+			<%= link_to "Start", obituary_welcome_path, class: "btn btn-outline-light btn-lg px-5" %>
 		<% else %>
-			<%= link_to "Hier starten", new_obituary_path, class: "btn btn-outline-light btn-lg px-5" %>
+			<%= link_to "Start", new_obituary_path, class: "btn btn-outline-light btn-lg px-5" %>
 		<% end %>
   </div>
 </div>
